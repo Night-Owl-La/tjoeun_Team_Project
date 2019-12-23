@@ -1,0 +1,4 @@
+navigation bar : #434343
+background : f0f0f0
+bottom : 8c8c8c
+point color : aaaaaa
