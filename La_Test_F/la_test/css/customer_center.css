@@ -3,50 +3,50 @@
 /* 고객센터 CSS */
 
 /* front_customer_page */
-a{
+a, a:hover {
     text-decoration: none;
     color: #434343
 }
-#content_Body_Box{
+
+#content_Body_Box {
     width: 100%;
     height: 100%;
 }
 
-.content_Header_Item_Box{
+.content_Header_Item_Box {
     width: 80%;
     height: auto;
-    
+
     margin: auto;
     margin-top: 5%;
-    margin-bottom: 5%
 }
 
-.content_Header_Item{
+.content_Header_Item {
     display: inline-block;
     width: 20%;
     height: auto;
-    margin-top: 5%;
-    margin-right:4%;
-    margin-left:4%;
-    
+    margin-right: 4%;
+    margin-left: 4%;
+
     font-weight: bold;
 }
 
-.content_Header_Item > a > img{
+.content_Header_Item > a > img {
     width: 80%;
 }
 
-.content_Header_Item > div{
+.content_Header_Item > div {
     font-size: 1rem;
 }
 
-.content_Header_Text{
+.content_Header_Text {
     width: 100%;
-    margin-top: 10%;
+    margin: auto;
+    margin-top: 100px;
 }
 
-.content_Header_Text > a >h1 ,
-.content_Body_Item > a > span {
+.content_Header_Text > a > h1,
+#empty{
     font-size: 5rem;
     font-family: '휴먼둥근헤드라인';
 }
@@ -56,9 +56,34 @@ a{
 .content_Body_Item_Box {
     width: 100%;
     height: auto;
+   margin: auto;
+   margin-top: 150px;
     
-    margin-top: 10rem;
+    padding: 0px;
+}
+
+.row{
+    margin: 0px;
+    padding: 0px;
 }
 
 /* notice_page */
 
+#notice_Table{
+    width: 100%;
+    
+    margin: auto;
+}
+
+@media (max-width: 1280px){
+    .content_Header_Item_Box{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1280px){
+    #content_Box{
+        width: 1280px;
+        height: 1024px;
+    }
+}
