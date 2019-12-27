@@ -22,6 +22,21 @@
 					"ownedViews": [
 						{
 							"_type": "UMLNoteView",
+							"_id": "AAAAAAFvRqUlgQHLJT4=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"lineColor": "#00a9ff",
+							"font": "Arial;20;0",
+							"left": 144,
+							"top": 504,
+							"width": 417,
+							"height": 193,
+							"text": "이주성",
+							"wordWrap": false
+						},
+						{
+							"_type": "UMLNoteView",
 							"_id": "AAAAAAFvG9kDouXIilQ=",
 							"_parent": {
 								"$ref": "AAAAAAFF+qBtyKM79qY="

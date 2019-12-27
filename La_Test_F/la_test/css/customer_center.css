@@ -14,7 +14,7 @@ header .container {
     position: relative;
     width: 1280px;
     margin: 0 auto;
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
 }
 
 /*banner*/
@@ -26,7 +26,7 @@ header .container {
 .banner_menu .banner_item{
     display: inline-block;
     width: 20%;
-    margin: 0 auto;
+    margin-left: 10%;
     
     text-align: center;
 }
@@ -46,8 +46,10 @@ header .container {
 .content_menu .content_item a, .content2_menu .content2_item a:hover{
     color: #222;
 }
-.content_menu .content_item> a div{
-    font-size: 3rem
+.content_menu .content_item> a h2{
+    font-size: 3vw;
+    font-weight: 700;
+    color: #757575;
 }
 
 /*content2*/
@@ -62,9 +64,8 @@ header .container {
     margin: auto;
 }
 
-#notice_Table caption{
-    caption-side: top;
-    font-size: 3rem;
-    font-weight: 700;
-    text-align: center;
+@media (min-width: 1920px){
+    .content_menu .content_item> a h2{
+        font-size: 4rem;
+    }
 }

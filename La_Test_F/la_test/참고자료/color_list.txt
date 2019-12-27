@@ -1,4 +1,5 @@
 navigation bar : #434343
 background : #f0f0f0
 footer : #434343
+strong : #757575
 point color : ???
