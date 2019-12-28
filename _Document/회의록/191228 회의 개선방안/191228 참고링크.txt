@@ -1,3 +1,3 @@
-2019.03 ¹ÝÀÀÇü Ç¥ÁØ ÇØ»óµµ : https://uxicode.tistory.com/entry/%EB%B0%98%EC%9D%91%ED%98%95-%ED%91%9C%EC%A4%80-%ED%99%94%EB%A9%B4-%ED%95%B4%EC%83%81%EB%8F%84
-2019.11 ¹Ìµð¾îÄõ¸® break point : https://eunyoe.tistory.com/m/entry/CSS-%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9-%EB%94%94%EB%B0%94%EC%9D%B4%EC%8A%A4%EB%B3%84-%ED%95%B4%EC%83%81%EB%8F%84-%EB%B0%98%EC%9D%91%ED%98%95-%EB%B6%84%EA%B8%B0%EC%A0%90-%EB%A6%AC%EC%8A%A4%ED%8A%B8
-±¸±Û ¸¶Å×¸®¾ó> ±×¸®µå½Ã½ºÅÛ : https://material.io/design/layout/responsive-layout-grid.html#grid-customization
+ï»¿2019.03 ë°˜ì‘í˜• í‘œì¤€ í•´ìƒë„ : https://uxicode.tistory.com/entry/%EB%B0%98%EC%9D%91%ED%98%95-%ED%91%9C%EC%A4%80-%ED%99%94%EB%A9%B4-%ED%95%B4%EC%83%81%EB%8F%84
+2019.11 ë¯¸ë””ì–´ì¿¼ë¦¬ break point : https://eunyoe.tistory.com/m/entry/CSS-%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9-%EB%94%94%EB%B0%94%EC%9D%B4%EC%8A%A4%EB%B3%84-%ED%95%B4%EC%83%81%EB%8F%84-%EB%B0%98%EC%9D%91%ED%98%95-%EB%B6%84%EA%B8%B0%EC%A0%90-%EB%A6%AC%EC%8A%A4%ED%8A%B8
+êµ¬ê¸€ ë§ˆí…Œë¦¬ì–¼> ê·¸ë¦¬ë“œì‹œìŠ¤í…œ : https://material.io/design/layout/responsive-layout-grid.html#grid-customization
