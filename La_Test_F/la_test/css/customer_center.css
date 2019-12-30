@@ -17,6 +17,11 @@ header .container {
     /*border: 1px solid blue;*/
 }
 
+.container{
+    position: relative;
+    width: 1280px;
+}
+
 /*banner*/
 #banner{
     margin:0 auto;
