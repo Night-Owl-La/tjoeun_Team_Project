@@ -1,0 +1,9 @@
+<!-- 구조 태그. -->
+<header></header>
+<nav></nav>
+<section></section>
+<article></article>
+<aside></aside>
+<footer></footer>
+
+참고 : https://webdir.tistory.com/86
