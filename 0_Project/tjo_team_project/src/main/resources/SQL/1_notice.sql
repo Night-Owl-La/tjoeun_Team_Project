@@ -1,7 +1,7 @@
--- 0. °øÁö»çÇ× ½ÃÄö½º »ı¼º.
+ï»¿-- 0. ê³µì§€ì‚¬í•­ ì‹œí€€ìŠ¤ ìƒì„±.
 create sequence seq_notice_idx;
 
--- 1. °øÁö»çÇ× Å×ÀÌºí »ı¼º.
+-- 1. ê³µì§€ì‚¬í•­ í…Œì´ë¸” ìƒì„±.
 create table notice
 (
 	notice_idx			 int,
@@ -11,13 +11,13 @@ create table notice
 	notice_author		 varchar2(100)   not null
 );
 
--- 2. ±âº»Å° Á¦¾àÁ¶°Ç Ãß°¡.
+-- 2. ê¸°ë³¸í‚¤ ì œì•½ì¡°ê±´ ì¶”ê°€.
 alter table notice add constraint pk_notice_idx primary key(notice_idx);
 
--- 3. sample data »ğÀÔ.
-insert into notice values(seq_notice_idx.nextVal, 'Ã¹¹øÂ° °øÁö»çÇ×', 'Ã¹¹øÂ° °øÁö»çÇ× ³»¿ë', sysdate, '°ü¸®ÀÚ');
-insert into notice values(seq_notice_idx.nextVal, 'µÎ¹øÂ° °øÁö»çÇ×', 'µÎ¹øÂ° °øÁö»çÇ× ³»¿ë', sysdate, '°ü¸®ÀÚ');
-insert into notice values(seq_notice_idx.nextVal, '¼¼¹øÂ° °øÁö»çÇ×', '¼¼¹øÂ° °øÁö»çÇ× ³»¿ë', sysdate, '°ü¸®ÀÚ');
+-- 3. sample data ì‚½ì….
+insert into notice values(seq_notice_idx.nextVal, 'ì²«ë²ˆì§¸ ê³µì§€ì‚¬í•­', 'ì²«ë²ˆì§¸ ê³µì§€ì‚¬í•­ ë‚´ìš©', sysdate, 'ê´€ë¦¬ì');
+insert into notice values(seq_notice_idx.nextVal, 'ë‘ë²ˆì§¸ ê³µì§€ì‚¬í•­', 'ë‘ë²ˆì§¸ ê³µì§€ì‚¬í•­ ë‚´ìš©', sysdate, 'ê´€ë¦¬ì');
+insert into notice values(seq_notice_idx.nextVal, 'ì„¸ë²ˆì§¸ ê³µì§€ì‚¬í•­', 'ì„¸ë²ˆì§¸ ê³µì§€ì‚¬í•­ ë‚´ìš©', sysdate, 'ê´€ë¦¬ì');
 
--- 4. Àû¿ë.
+-- 4. ì ìš©.
 commit;
