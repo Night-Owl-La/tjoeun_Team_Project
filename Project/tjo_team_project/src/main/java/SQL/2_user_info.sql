@@ -21,19 +21,19 @@
  )
  
  --기본키
- alter table user 
+ alter table user_info
    add constraint pk_user_idx primary key(user_idx);
    
  --id unique 제약
- alter table user
+ alter table user_info
    add constraint unique_user_id unique(user_id);
 
 --회원등급
-alter table user
-	add constraint ck_user_grade check(grade in('일반','실버','vip','관리자'));
+alter table user_info
+	add constraint ck_user_grade check(user_grade in('일반','실버','vip','관리자'));
 
 --Sample data
- insert into user values(
+ insert into user_info values(
  					seq_user_idx.nextVal,
  					'one',
  					'1234',
@@ -50,7 +50,7 @@ alter table user
  );  
  
  
-  insert into user values(
+  insert into user_info values(
  					seq_user_idx.nextVal,
  					'two',
  					'1234',
@@ -66,7 +66,7 @@ alter table user
  					sysdate 
  ); 
  
- insert into user values(
+ insert into user_info values(
  					seq_user_idx.nextVal,
  					'admin',
  					'1234',
