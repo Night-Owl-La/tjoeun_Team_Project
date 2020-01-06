@@ -1,4 +1,4 @@
-package util;
+Ôªøpackage util;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -6,6 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -13,17 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
-import vo.MovieInfo_Vo;
 
 @Controller
 public class API_TestController {
 	
-	// ¿Œ¡ı≈∞
+	// Ïù∏Ï¶ùÌÇ§
 	static final String KEY = "E2004FE64ZOE1FAW3JUW";
 
 	StringBuilder urlBuilder;
@@ -39,18 +36,18 @@ public class API_TestController {
 	public void request_Test() throws Exception {
 
 		// Service Key
-		//±π∞°
-		urlBuilder.append(URLEncoder.encode("nation=¥Î«—πŒ±π", "UTF-8"));
+		//Íµ≠Í∞Ä
+		urlBuilder.append(URLEncoder.encode("nation=ÎåÄÌïúÎØºÍµ≠", "UTF-8"));
 		
-		//¿Œ¡ı≈∞
+		//Ïù∏Ï¶ùÌÇ§
 		urlBuilder.append("&" + "ServiceKey="+KEY);
 		
-		//øµ»≠ ¿Ã∏ß
-		urlBuilder.append("&" + URLEncoder.encode("title", "UTF-8") + "=" + URLEncoder.encode("∞‹øÔø’±π", "UTF-8"));
+		//ÏòÅÌôî Ïù¥Î¶Ñ
+		urlBuilder.append("&" + URLEncoder.encode("title", "UTF-8") + "=" + URLEncoder.encode("Í≤®Ïö∏ÏôïÍµ≠", "UTF-8"));
 		
-		// ªÛøµ ≥‚µµ
+		// ÏÉÅÏòÅ ÎÖÑÎèÑ
 //		urlBuilder.append("&" + URLEncoder.encode("val001", "UTF-8") + "=" + URLEncoder.encode("2020", "UTF-8"));
-		// ªÛøµ ø˘
+		// ÏÉÅÏòÅ Ïõî
 //		urlBuilder.append("&" + URLEncoder.encode("val002", "UTF-8") + "=" + URLEncoder.encode("01", "UTF-8"));
 
 		URL url = new URL(urlBuilder.toString());
@@ -95,24 +92,23 @@ public class API_TestController {
 		
 		JsonObject json_Object = new JsonParser().parse(sb.toString()).getAsJsonObject();
 		// "Data"
-		JsonElement json_Data_Array = json_Object.get("Data").getAsJsonArray().get(0);
+		//JsonElement json_Data_Array = json_Object.get("Data").getAsJsonArray().get(0);
 		
 		// "Result"
-		JsonArray json_Result_Array =  json_Data_Array.getAsJsonObject().get("Result").getAsJsonArray();
-		JsonElement json_Result = json_Data_Array.getAsJsonObject().get("Result").getAsJsonArray().get(0);
+		//JsonArray json_Result_Array =  json_Data_Array.getAsJsonObject().get("Result").getAsJsonArray();
+		//JsonElement json_Result = json_Data_Array.getAsJsonObject().get("Result").getAsJsonArray().get(0);
 		// "director"
-		JsonArray json_Director = json_Result.getAsJsonObject().get("director").getAsJsonArray();
-		JsonElement json_Director_Array = json_Director.get(0);
+		//JsonArray json_Director = json_Result.getAsJsonObject().get("director").getAsJsonArray();
+		//JsonElement json_Director_Array = json_Director.get(0);
 		
-		JsonArray json_Actor = json_Result.getAsJsonObject().get("actor").getAsJsonArray();
-		JsonElement json_Actor_Array = json_Actor.get(0);
+		//JsonArray json_Actor = json_Result.getAsJsonObject().get("actor").getAsJsonArray();
+		//JsonElement json_Actor_Array = json_Actor.get(0);
 		
-		JsonArray json_Rating = json_Result.getAsJsonObject().get("rating").getAsJsonArray();
-		JsonElement json_Rating_Array = json_Rating.get(0);
+		//JsonArray json_Rating = json_Result.getAsJsonObject().get("rating").getAsJsonArray();
+		//JsonElement json_Rating_Array = json_Rating.get(0);
 		
-		System.out.println(json_Rating_Array);
-		
-		
+		//System.out.println(json_Rating_Array);
+				
 		//MovieInfo_Vo[] vo = gson.fromJson(json_Result_Array, MovieInfo_Vo[].class);
 		
 		
@@ -125,7 +121,11 @@ public class API_TestController {
 		
 		//MovieInfo_Vo vo = gson.fromJson(result_Array, MovieInfo_Vo.class);
 		
+		Map t_list = gson.fromJson(json_Object, new HashMap().getClass());
 		
+		List dataMap =  (List) t_list.get("Data");
+		
+		System.out.println(dataMap);
 		
 		System.out.println("-------------vo-------------");
 		System.out.println("---------------------------------");
