@@ -4,11 +4,11 @@ create sequence seq_notice_idx;
 -- 1. 공지사항 테이블 생성.
 create table notice
 (
-	notice_idx			int,
-	notice_title		varchar2(100)	not null,
-	notice_content		varchar2(100),
-	notice_date			date 			not null,
-	notice_author		varchar2(100)	not null
+	notice_idx			 int,
+	notice_title		 varchar2(100)	 not null,
+	notice_content		 varchar2(100),
+	notice_date			 date 			 not null,
+	notice_author		 varchar2(100)   not null
 );
 
 -- 2. 기본키 제약조건 추가.
