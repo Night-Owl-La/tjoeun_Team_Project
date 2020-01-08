@@ -12,6 +12,8 @@
 	</typeAliases>
 
 	<mappers>
-		<!-- <mapper resource="config/mybatis/mapper/dept.xml" /> -->
+		<mapper resource="config/mybatis/mapper/notice.xml" />
+		<mapper resource="config/mybatis/mapper/faq.xml" />
+		<mapper resource="config/mybatis/mapper/oneby.xml" />    
 	</mappers>
 </configuration>

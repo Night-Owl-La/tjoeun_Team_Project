@@ -2,7 +2,7 @@ package vo;
 
 import java.util.List;
 
-public class MovieInfo_Vo {
+public class MovieInfoVo {
 	String DOCID;
 
 	// 영화 등록 ID.
