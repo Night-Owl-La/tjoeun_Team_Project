@@ -40,7 +40,10 @@ public class API_MovieInfomation_DB {
 		// 3. GSON 파싱후 결과 리스트 받아오기.
 		List<MovieInfoVo> movieList = gsonParssing(jsonData);
 
-		// 4. 결과 리스트 반환.
+		// 4. 파싱된 데이터 필터링.
+		// TODO 파싱된 데이터 필터링해서 사용가능한 데이터로 반환하는 메소드를 구현해야함.
+		
+		// 5. 결과 리스트 반환.
 		return movieList;
 	}
 
