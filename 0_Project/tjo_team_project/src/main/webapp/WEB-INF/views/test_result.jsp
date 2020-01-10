@@ -42,11 +42,9 @@
 					</c:forEach>
 				</td>
 				<td>
-					<c:forEach var="ratingMap" items="${ movie.ratingList }">
 					<ul>
-						<li>${ ratingMap.runtime }</li>
+						<li>${ movie.runtime }</li>
 					</ul>
-					</c:forEach>
 				</td>
 				
 				<td>

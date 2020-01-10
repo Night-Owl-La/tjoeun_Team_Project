@@ -8,6 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +21,7 @@ import com.google.gson.JsonParser;
 import vo.MovieInfoVo;
 
 public class API_MovieInfomation_DB {
-	
+
 	static final String url = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json.jsp";
 
 	public static List<MovieInfoVo> searchMovieList(String search_Key, String search_Value) throws IOException {
@@ -40,31 +41,29 @@ public class API_MovieInfomation_DB {
 		// 3. GSON 파싱후 결과 리스트 받아오기.
 		List<MovieInfoVo> movieList = gsonParssing(jsonData);
 
-		// 4. 파싱된 데이터 필터링.
-		// TODO 파싱된 데이터 필터링해서 사용가능한 데이터로 반환하는 메소드를 구현해야함.
-		
-		// 5. 결과 리스트 반환.
+		// 4. 결과 리스트 반환.
 		return movieList;
 	}
 
-	private static StringBuilder getRequestUrl(String search_Key, String search_Value) throws UnsupportedEncodingException {
-		
+	private static StringBuilder getRequestUrl(String search_Key, String search_Value)
+			throws UnsupportedEncodingException {
+
 		StringBuilder urlBuilder;
 
 		// ------ 필수값 -------
 		// 요청 URL 주소
 		urlBuilder = new StringBuilder(url);
 
-		//요청 DB
+		// 요청 DB
 		urlBuilder.append("?collection=kmdb_new");
-		
+
 		// 인증키
 		urlBuilder.append("&ServiceKey=" + OpenAPI_Key.MovieDB_Key.KEY);
 
 		// 상세 정보 불러오기 여부.
 		urlBuilder.append("&detail=Y");
-		
-		//최대 검색수.
+
+		// 최대 검색수.
 		urlBuilder.append("&listCount=10");
 
 		// ------ 검색 값 -------
@@ -79,7 +78,7 @@ public class API_MovieInfomation_DB {
 		URL url = new URL(urlBuilder.toString());
 
 		// url check.
-		System.out.println(url); //TODO
+		//System.out.println(url); // TODO
 
 		// URL에서 커넥션 얻기.
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -87,7 +86,7 @@ public class API_MovieInfomation_DB {
 		conn.setRequestProperty("Content-type", "application/json");
 
 		// 응답코드 확인.
-		System.out.println("Response code: " + conn.getResponseCode());
+		//System.out.println("Response code: " + conn.getResponseCode());
 
 		return conn;
 	}
@@ -99,10 +98,10 @@ public class API_MovieInfomation_DB {
 
 		if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
 			rd = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
-			System.out.println("success");
+			//System.out.println("success");
 		} else {
 			rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
-			System.out.println("error");
+			//System.out.println("error");
 		}
 
 		// 문자열 빌더.
@@ -168,11 +167,70 @@ public class API_MovieInfomation_DB {
 			// 스텝 정보 삽입.
 			movieVo.setStaffList((List) resultMap.get("staff"));
 
+			// -------- 데이터 필터링. --------
+			movieVo = dataFiltering(movieVo);
+
 			// 최종으로 리턴될 결과 리스트에 Vo 추가.
 			movieList.add(movieVo);
 		}
 		return movieList;
+	}
 
+	private static MovieInfoVo dataFiltering(MovieInfoVo movieVo) {
+		// -- 제목 파싱. --
+		String re_Title = movieVo.getTitle().replace("!HS ", "").replace(" !HE ", "");
+		movieVo.setTitle(re_Title);
+
+		// -- 관람등급 파싱. --
+		Map ratingMap = (Map) movieVo.getRatingList().get(0);
+		String ratingGrade = (String) ratingMap.get("ratingGrade");
+
+		// 관람등급 문자 필터링.
+		try {
+			ratingGrade = ratingGrade.substring(0, ratingGrade.indexOf("|"));
+		} catch (Exception e) {
+			if (ratingGrade == "" || ratingGrade.isEmpty())
+				ratingGrade = "-";
+		}
+		movieVo.setRatingGrade(ratingGrade);
+
+		// -- 포스터 배열 파싱. --
+		// 엘리먼트 분할.
+		List<String> posterList = change_Bar_To_Space(movieVo.getPosters());
+		movieVo.setPosterList(posterList);
+
+		// -- 스틸컷 배열 파싱. --
+		// 엘리먼트 분할.
+		List<String> stillList = change_Bar_To_Space(movieVo.getStills());
+		movieVo.setStillList(stillList);
+
+		// -- 수상내역 배열 파싱. --
+		// 엘리먼트 분할.
+		List<String> award1List = change_Bar_To_Space(movieVo.getAwards1());
+		movieVo.setAward1List(award1List);
+
+		return movieVo;
+	}
+
+	// 덩어리진 값을 분할 저장해서 List로 돌려줌.
+	private static List<String> change_Bar_To_Space(String lump) {
+		// 값 배열을 분할해서 저장할 리스트.
+		List<String> div_Array = new ArrayList<String>();
+		// 값 필터링.
+		lump = lump.replace("|", "###"); // 'ㅣ'값을 못읽는 케이스가 있어서 다른값으로 수정.
+		// 주소 값이 여러개 인가?
+		if (lump.indexOf("###") != -1) {
+			div_Array = Arrays.asList(lump.split("###"));
+		} else {
+			div_Array = new ArrayList<String>();
+			// 주소 값이 비어있나?
+			if (lump.isEmpty() || lump == "") {
+				div_Array.add("없음");
+			} else {
+				div_Array.add(lump);
+			}
+		}
+		return div_Array;
 	}
 
 }
