@@ -13,10 +13,15 @@ public class NoticeService_Impl implements NoticeService {
 
 	@Autowired
 	NoticeDao noticeDao;
-	
+
 	@Override
 	public List<NoticeVo> notice_selectList() {
 		return noticeDao.notice_selectList();
+	}
+
+	@Override
+	public NoticeVo notice_selectOne(int notice_idx) {
+		return noticeDao.notice_selectOne(notice_idx);
 	}
 
 	@Override

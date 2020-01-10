@@ -24,4 +24,12 @@ public class Notice_Controller {
 		
 		return "notice/notice_page";
 	}
+	
+	@RequestMapping("/notice/notice_view.do")
+	public String notice_View(int notice_idx, Model model) {
+		NoticeVo notice = noticeService.notice_selectOne(notice_idx);
+		
+		model.addAttribute("notice", notice);
+		return "notice/notice_view";
+	}
 }

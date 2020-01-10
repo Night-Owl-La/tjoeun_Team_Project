@@ -78,7 +78,7 @@
                     <!-- 고객 서비스 -->
                     <div class="content_item">
                         <a href="#">
-                            <h2>공지사항</h2>
+                            <h2>보기</h2>
                         </a>
                     </div>
                 </div>
@@ -86,48 +86,21 @@
         </div>
     </section>
 
-    <!-- content -->
-    <section id="content">
-        <div class="content_menu">
-            <div class="container">
-                <div class="row">
-                    <!-- 고객 서비스 -->
-                    <div class="content_item">
-                    	<c:if test="${ empty noticeList }">
-                        	작성된 자주찾는 질문이 없습니다.
-                        </c:if>
-                        <c:if test="${ not empty noticeList }">
-	                        <table id="notice_Table" class="table table-bordered table-hover">
-	                           <caption hidden>공지사항</caption>
-	                            <tbody>
-	                                <tr>
-	                                    <th width="10%">No</th>
-	                                    <th width="65%">Title</th>
-	                                    <th width="15%">Regdate</th>
-	                                    <th width="10%">Author</th>
-	                                </tr>
-	
-	                                <!-- test temp data-->
-	                                <c:forEach var="notice" items="${ noticeList }">
-		                                <tr>
-		                                    <td>${ notice.notice_idx }</td>
-		                                    <td>
-		                                    	<a onclick="location.href='notice_view.do?notice_idx='+${ notice.notice_idx }; return false;" href="">${ notice.notice_title }</a>
-		                                    </td>
-		                                    <td>${ notice.notice_regdate }</td>
-		                                    <td>${ notice.notice_author }</td>
-		                                </tr>
-									</c:forEach>
-	                            </tbody>
-	                        </table>
-                        </c:if>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<!-- content -->
+	<section id="content">
+		<div class="content_menu">
+			<div class="container">
+				<div class="row">
+					<!-- 고객 서비스 -->
+					<div class="content_item">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <section id="content2">
+	<section id="content2">
         <div class="content2_menu">
             <div class="container">
                 <div class="row">

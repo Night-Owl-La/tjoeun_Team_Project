@@ -20,6 +20,11 @@ public class NoticeDao_Impl implements NoticeDao {
 	}
 
 	@Override
+	public NoticeVo notice_selectOne(int notice_idx) {
+		return sqlSession.selectOne("notice.notice_List_Idx", notice_idx);
+	}
+	
+	@Override
 	public NoticeVo notice_selectOne(String notice_title) {
 		// TODO Auto-generated method stub
 		return null;
