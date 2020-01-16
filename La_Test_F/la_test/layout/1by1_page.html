@@ -4,24 +4,24 @@
 
 <head>
     <meta charset="utf-8">
-    <title>??? - 고객센터</title>
+    <title>1:1문의 - 고객센터</title>
 
     <!-- 부트스트랩 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- CSS 초기화 -->
     <link rel="stylesheet" href="../css/w_init.css">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/customer_center.css">
+    <link rel="stylesheet" href="../css/oneby.css">
     <!-- 웹 폰트 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:199,300,400,500,700,900&subset=korean">
 </head>
 
 <body>
-    <h1 hidden>1:1 문의</h1>
-    <!-- header -->
-    <header>
-        <div class="container">
-            <div class="row">
+    <div id="wrap">
+        <!-- header -->
+        <header id="header">
+            <h1 hidden>1:1문의</h1>
+            <div class="inner_header">
                 <!-- 네비게이션 바 -->
                 <div id="navigation_Bar">
                     <a href="../layout/front_customer_page.html"><img src="../images/customer_center_images/logo.png" alt="Logo"></a>
@@ -37,72 +37,92 @@
                     </nav>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-     <!-- banner -->
-    <section id="banner">
-        <div class="banner_menu">
-            <div class="container">
-                <div class="row">
-                    <div class="banner_item">
-                        <a href="../layout/notice_page.html">
-                            <img src="../images/customer_center_images/search.png" alt="고객센터 공지사항">
-                        </a>
-                        <div>공지사항</div>
-                    </div>
-                    <div class="banner_item">
-                        <a href="../layout/faq_page.html">
-                            <img src="../images/customer_center_images/FAQ.png" alt="고객센터 FAQ">
-                        </a>
-                        <div>FAQ</div>
-                    </div>
-                    <div class="banner_item">
-                        <a href="../layout/1by1_page.html">
-                            <img src="../images/customer_center_images/1by1.png" alt="고객센터 1:1 문의">
-                        </a>
-                        <div>1:1 문의</div>
-                    </div>
-                </div>
+        <main id="wrap_main">
+            <!-- header main-->
+            <div class="title_header_main">
+                <a href="../layout/front_customer_page.html">
+                    <span class="image_title_header_main"></span>
+                </a>
             </div>
-        </div>
-    </section>
 
-    <!-- content -->
-    <section id="content">
-        <div class="content_menu">
-            <div class="container">
-                <div class="row">
-                    <!-- 고객 서비스 -->
-                    <div class="content_item">
-                        <a href="#">
-                            <h2>1:1 문의</h2>
-                        </a>
+            <!-- inner_wrap main -->
+            <div class="inner_wrap_main">
+
+                <!-- nav -->
+                <nav id="nav">
+                    <div class="title_menu_nav">
+                        <span class="text_title_menu_nav">Service</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="content2">
-        <div class="content2_menu">
-            <div class="container">
-                <div class="row">
-                    <div class="content2_item">
-                        <a href="#">
-                            <div>EMPTY</div>
-                            <!-- 임시 메시지-->
-                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur amet laudantium ipsum modi. Dicta porro, dolore, omnis voluptatem assumenda similique aliquid inventore adipisci expedita nisi quis odit, maiores corrupti! Molestiae saepe, fugiat ipsam assumenda debitis nemo dicta numquam voluptates, vitae nostrum mollitia iste aperiam distinctio neque. Sequi magni officiis reiciendis adipisci. Deleniti cumque voluptatem doloribus provident voluptatibus nesciunt itaque hic, cum veniam quaerat ullam, esse qui eaque, consequatur. Cumque velit, architecto perspiciatis quas omnis nemo, quis et est, ab voluptatibus pariatur consequuntur tempora excepturi! Soluta numquam modi asperiores expedita. Impedit non optio perferendis delectus, quidem distinctio aliquam molestias quas velit omnis, dolorem culpa cumque deleniti vero sunt ex est excepturi. Nam inventore adipisci ea dolorem molestias vel aperiam provident illum, explicabo consequatur libero, quos enim vitae repellat pariatur officia. Facere delectus pariatur quisquam officia fugit voluptatum vitae nobis beatae suscipit laborum cupiditate optio, ipsum nesciunt reiciendis illum sunt, aliquam molestias fugiat quibusdam. Aut blanditiis consequatur ad totam aliquam fugit, eum quod odit similique! At nobis facilis est beatae impedit harum aspernatur suscipit sapiente, temporibus quam reprehenderit ex excepturi eaque veniam placeat cumque eius expedita repudiandae alias nulla, aut, perspiciatis maxime possimus doloribus. Suscipit, voluptatem magni eaque similique, non incidunt facere.</span>
-                        </a>
+                    <div class="menu_nav">
+                        <ul class="list_menu_nav">
+                            <li class="link_list_menu_nav"><a href="../layout/notice_page.html">Notice</a></li>
+                            <li class="link_list_menu_nav"><a href="../layout/faq_page.html">FAQ</a></li>
+                            <li class="link_list_menu_nav"><a href="../layout/1by1_page.html">1:1문의</a></li>
+                        </ul>
                     </div>
-                </div>
+                </nav>
+
+                <!-- content -->
+                <section id="content">
+                    <article class="menu_content">
+                        <!-- 고객 서비스 -->
+                        <div class="item_content">
+                            <div class="header_table">
+                                <h2>
+                                   <span class="title_header_table">1:1문의</span>
+                                </h2>
+                                <spna class="search_bar">
+                                    <select name="search_option" id="search_option_notice" class="search_option_notice">
+                                        <option value="title">제목</option>
+                                        <option value="content">내용</option>
+                                    </select>
+                                    <input type="text" class="search_text_notice">
+                                    <input type="button" value="검색" class="search_btn_notice">
+                                </spna>
+                                
+                            </div>
+                            <table class="table table-hover table_item_content">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Category</th>
+                                    <th>Title</th>
+                                    <th>Regdate</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>문의</td>
+                                    <td>예약 취소.</td>
+                                    <td>2019.01.01</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>문의</td>
+                                    <td>회원정보 수정하는 방법.</td>
+                                    <td>2019.01.02</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>칭찬</td>
+                                    <td>고객센터 담당자분 친절합니다.</td>
+                                    <td>2019.01.03</td>
+                                </tr>
+                                <!-- sample data-->
+                            </table>
+                        </div>
+                        <!-- paging -->
+                        <div class="paging_content">
+                            <span>◀ &nbsp;&nbsp;1&nbsp;&nbsp; 2&nbsp;&nbsp; 3&nbsp;&nbsp; ▶</span>
+                        </div>
+                    </article>
+                </section>
             </div>
-        </div>
-    </section>
-
-    <!-- footer -->
-    <footer>
-
-    </footer>
+        </main>
+        <!-- footer -->
+        <footer id="footer">
+            <span class="text_footer">footer</span>
+        </footer>
+    </div>
 
 </body></html>
