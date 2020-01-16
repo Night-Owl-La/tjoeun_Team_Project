@@ -38,9 +38,7 @@ body{
 
 /* main */
 #wrap_main{
-    margin: auto auto;
-    display: flex;
-    flex-direction: column;
+    margin: 0 auto;
     width: 1280px;
     padding-bottom: 40px;
     
@@ -111,8 +109,5 @@ body{
     margin: auto;
 }
 
-@media (min-width: 1920px){
-    .content_menu .content_item> a h2{
-        font-size: 4rem;
-    }
+@media (max-width: 1280px){
 }
