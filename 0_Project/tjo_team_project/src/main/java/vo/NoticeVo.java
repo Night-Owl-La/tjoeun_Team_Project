@@ -2,8 +2,10 @@ package vo;
 
 public class NoticeVo {
 	int notice_idx;
+	String notice_category;
 	String notice_title;
 	String notice_content;
+	String notice_view_count;
 	String notice_regdate;
 	String notice_modifydate;
 	String notice_author;
@@ -14,6 +16,14 @@ public class NoticeVo {
 
 	public void setNotice_idx(int notice_idx) {
 		this.notice_idx = notice_idx;
+	}
+
+	public String getNotice_category() {
+		return notice_category;
+	}
+
+	public void setNotice_category(String notice_category) {
+		this.notice_category = notice_category;
 	}
 
 	public String getNotice_title() {
@@ -30,6 +40,14 @@ public class NoticeVo {
 
 	public void setNotice_content(String notice_content) {
 		this.notice_content = notice_content;
+	}
+
+	public String getNotice_view_count() {
+		return notice_view_count;
+	}
+
+	public void setNotice_view_count(String notice_view_count) {
+		this.notice_view_count = notice_view_count;
 	}
 
 	public String getNotice_regdate() {
