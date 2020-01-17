@@ -1,0 +1,6 @@
+//com.springsource.config.ui.prefs.activePageIndex\:/tjo_team_project/src/main/resources/config/spring/context/context-1-datasource.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/tjo_team_project/src/main/resources/config/spring/context/context-2-mybatis.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/tjo_team_project/src/main/resources/config/spring/context/context-5-fileupload.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/tjo_team_project/src/main/resources/config/spring/context/context-6-jsonconverter.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/tjo_team_project/src/main/resources/config/spring/servlet/servlet-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+eclipse.preferences.version=1

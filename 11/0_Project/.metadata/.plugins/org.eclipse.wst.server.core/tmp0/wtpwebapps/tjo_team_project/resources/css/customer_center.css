@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* ! 고객센터 CSS */
+
+/* !! front_customer_page */
+
+/*header*/
+header{
+    width: 100%;
+    font-size: 1.5rem;
+    background: #434343;
+}
+header .container {
+    position: relative;
+    width: 1280px;
+    margin: 0 auto;
+    /*border: 1px solid blue;*/
+}
+
+.container{
+    position: relative;
+    width: 1280px;
+}
+
+/*banner*/
+#banner{
+    margin:0 auto;
+    margin-top: 5%;
+}
+.banner_menu{}
+.banner_menu .banner_item{
+    display: inline-block;
+    width: 20%;
+    margin-left: 10%;
+    
+    text-align: center;
+}
+.banner_menu .banner_item a img { width: 100%; }
+
+/*content*/
+#content, #content2{ margin-top: 5%;}
+.content_menu{}
+.content_menu .content_item,
+.content2_menu .content2_item{
+    width: 100%;
+    text-align: center;
+}
+.content_menu .content_item a, .content2_menu .content2_item a{
+    text-decoration: none;
+}
+.content_menu .content_item a, .content2_menu .content2_item a:hover{
+    color: #222;
+}
+.content_menu .content_item> a h2{
+    font-size: 3vw;
+    font-weight: 700;
+    color: #757575;
+}
+
+/*content2*/
+#content2{}
+.content2_menu{}
+.content2_item{
+}
+
+/* !! notice_page */
+#notice_Table{
+    width: 100%;
+    margin: auto;
+}
+
+@media (min-width: 1920px){
+    .content_menu .content_item> a h2{
+        font-size: 4rem;
+    }
+}
