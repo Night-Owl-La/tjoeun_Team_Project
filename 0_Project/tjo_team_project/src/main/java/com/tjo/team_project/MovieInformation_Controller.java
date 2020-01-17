@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import util.API_MovieInfomation_DB;
+import util.API_MovieInformation_DB;
 import vo.MovieInfoVo;
 
 @Controller
@@ -30,7 +30,7 @@ public class MovieInformation_Controller {
 		String search_Key = request.getParameter("search_Key");
 		String search_Value = request.getParameter("search_Value");
 		
-		List<MovieInfoVo> list = API_MovieInfomation_DB.searchMovieList(search_Key, search_Value);
+		List<MovieInfoVo> list = API_MovieInformation_DB.searchMovieList(search_Key, search_Value);
 		
 		model.addAttribute("list", list);
 		return "test_result";

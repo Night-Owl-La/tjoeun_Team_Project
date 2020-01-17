@@ -20,7 +20,7 @@ import com.google.gson.JsonParser;
 
 import vo.MovieInfoVo;
 
-public class API_MovieInfomation_DB {
+public class API_MovieInformation_DB {
 
 	static final String url = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json.jsp";
 
@@ -78,7 +78,7 @@ public class API_MovieInfomation_DB {
 		URL url = new URL(urlBuilder.toString());
 
 		// url check.
-		//System.out.println(url); // TODO
+		// System.out.println(url); // TODO
 
 		// URL에서 커넥션 얻기.
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
