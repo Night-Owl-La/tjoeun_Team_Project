@@ -2,65 +2,105 @@
 
 /* ! 고객센터 CSS */
 
-/* !! front_customer_page */
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-color: #292929;
+}
+
+#wrap{
+}
+
 
 /*header*/
-header{
-    width: 100%;
+#header{
     font-size: 1.5rem;
-    background: #434343;
+    background: #202020;
 }
-header .container {
-    position: relative;
+#header .inner_header {
     width: 1280px;
     margin: 0 auto;
-    /*border: 1px solid blue;*/
 }
 
-.container{
-    position: relative;
-    width: 1280px;
-}
-
-/*banner*/
-#banner{
-    margin:0 auto;
-    margin-top: 5%;
-}
-.banner_menu{}
-.banner_menu .banner_item{
-    display: inline-block;
-    width: 20%;
-    margin-left: 10%;
-    
-    text-align: center;
-}
-.banner_menu .banner_item a img { width: 100%; }
-
-/*content*/
-#content, #content2{ margin-top: 5%;}
-.content_menu{}
-.content_menu .content_item,
-.content2_menu .content2_item{
+#footer{
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    text-align: center;
-}
-.content_menu .content_item a, .content2_menu .content2_item a{
-    text-decoration: none;
-}
-.content_menu .content_item a, .content2_menu .content2_item a:hover{
-    color: #222;
-}
-.content_menu .content_item> a h2{
-    font-size: 3vw;
-    font-weight: 700;
-    color: #757575;
+    height: 50px;
+    background: #292929;
+    font-size: 1em;
 }
 
-/*content2*/
-#content2{}
-.content2_menu{}
-.content2_item{
+/* !! front_customer_page */
+
+/* main */
+#wrap_main{
+    margin: 0 auto;
+    width: 1280px;
+    padding-bottom: 40px;
+    
+    border-bottom: 1px solid #444;
+}
+
+#wrap_main .title_header_main{
+    padding-top: 40px;
+    text-align: center;
+}
+
+#wrap_main .image_title_header_main{
+    display: inline-block;
+    width: 160px;
+    height: 60px;
+    margin: auto;
+    
+    background: url(../images/customer_center_images/image_title_header_main.png) no-repeat;
+}
+
+#wrap_main .text_title_header_main{
+    display: block;
+    color: #ccc;
+    font-size: 24px;
+    height: 40px;
+    
+    border-top: 1px solid #999;
+}
+
+/* banner */
+#banner{
+    margin-top: 60px;
+}
+
+#banner .menu_banner{
+    display: flex;
+    padding: 0 140px;
+    justify-content: space-around;
+}
+
+#banner .item_banner{
+    text-align: center;
+}
+
+#banner .link_item_banner{
+    width: 100%;
+}
+
+#banner .title_item_banner{
+    color: #eee;
+    font-weight: 400;
+    font-size: 20px;
+    
+    margin-top: 10px;
+}
+
+#footer{
+    text-align: center;
+}
+
+#footer .text_footer{
+    color: #666;
 }
 
 /* !! notice_page */
@@ -69,8 +109,5 @@ header .container {
     margin: auto;
 }
 
-@media (min-width: 1920px){
-    .content_menu .content_item> a h2{
-        font-size: 4rem;
-    }
+@media (max-width: 1280px){
 }

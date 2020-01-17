@@ -1,32 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
-<!-- 메인 템플릿. -->
-
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>??? - 고객센터</title>
+    <title>공지사항 - 고객센터</title>
+
+    <!-- 부트스트랩 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- CSS 초기화 -->
+    <link rel="stylesheet" href="${ pageContext.request.contextPath }/resources/css/w_init.css">
+    <link rel="stylesheet" href="${ pageContext.request.contextPath }/resources/css/common.css">
+    <link rel="stylesheet" href="${ pageContext.request.contextPath }/resources/css/notice.css">
+    <!-- 웹 폰트 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:199,300,400,500,700,900&subset=korean">
 </head>
-<!-- 부트스트랩 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<!-- CSS 초기화 -->
-<link rel="stylesheet" href="${ pageContext.request.contextPath }/resources/css/w_init.css">
-<link rel="stylesheet" href="${ pageContext.request.contextPath }/resources/css/common.css">
-<link rel="stylesheet" href="${ pageContext.request.contextPath }/resources/css/customer_center.css">
-<!-- 웹 폰트 -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:199,300,400,500,700,900&subset=korean">
 
 <body>
-    <h1 hidden>공지사항</h1>
-    <!-- header -->
-    <header>
-        <div class="container">
-            <div class="row">
+    <div id="wrap">
+        <!-- header -->
+        <header id="header">
+            <h1 hidden>공지사항</h1>
+            <div class="inner_header">
                 <!-- 네비게이션 바 -->
                 <div id="navigation_Bar">
-                    <a href="../layout/front_customer_page.html"><img src="${ pageContext.request.contextPath }/resources/images/customer_center_images/logo.png" alt="Logo"></a>
+                    <a href="#"><img src="${ pageContext.request.contextPath }/resources/images/customer_center_images/logo.png" alt="Logo"></a>
                     <span>Navigation Bar</span>
                     <nav>
                         <ul class="clearfix">
@@ -39,113 +39,96 @@
                     </nav>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-     <!-- banner -->
-    <section id="banner">
-        <div class="banner_menu">
-            <div class="container">
-                <div class="row">
-                    <div class="banner_item">
-                        <a onclick="location.href='${ pageContext.request.contextPath }/notice/notice.do'; return false;" href="">
-                            <img src="${ pageContext.request.contextPath }/resources/images/customer_center_images/search.png" alt="고객센터 공지사항">
-                        </a>
-                        <div>공지사항</div>
-                    </div>
-                    <div class="banner_item">
-                        <a onclick="location.href='${ pageContext.request.contextPath }/faq/faq.do'; return false;" href="" >
-                            <img src="${ pageContext.request.contextPath }/resources/images/customer_center_images/FAQ.png" alt="고객센터 FAQ">
-                        </a>
-                        <div>FAQ</div>
-                    </div>
-                    <div class="banner_item">
-                        <a onclick="location.href='${ pageContext.request.contextPath }/oneby/oneby.do?user_idx=0'; return false;" href="">
-                            <img src="${ pageContext.request.contextPath }/resources/images/customer_center_images/1by1.png" alt="고객센터 1:1 문의">
-                        </a>
-                        <div>1:1 문의</div>
-                    </div>
-                </div>
+        <main id="wrap_main">
+            <!-- header main-->
+            <div class="title_header_main">
+                <a href="#">
+                    <span class="image_title_header_main"></span>
+                </a>
             </div>
-        </div>
-    </section>
-    
-    <!-- content -->
-    <section id="content">
-        <div class="content_menu">
-            <div class="container">
-                <div class="row">
-                    <!-- 고객 서비스 -->
-                    <div class="content_item">
-                        <a href="#">
-                            <h2>공지사항</h2>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- content -->
-    <section id="content">
-        <div class="content_menu">
-            <div class="container">
-                <div class="row">
-                    <!-- 고객 서비스 -->
-                    <div class="content_item">
-                    	<c:if test="${ empty noticeList }">
-                        	작성된 자주찾는 질문이 없습니다.
-                        </c:if>
-                        <c:if test="${ not empty noticeList }">
-	                        <table id="notice_Table" class="table table-bordered table-hover">
-	                           <caption hidden>공지사항</caption>
-	                            <tbody>
+            <!-- inner_wrap main -->
+            <div class="inner_wrap_main">
+
+                <!-- nav -->
+                <nav id="nav">
+                    <div class="title_menu_nav">
+                        <span class="text_title_menu_nav">Service</span>
+                    </div>
+                    <div class="menu_nav">
+                        <ul class="list_menu_nav">
+                            <li class="link_list_menu_nav"><a href="#" onclick="location.href='${ pageContext.request.contextPath }/notice/notice.do';">Notice</a></li>
+                            <li class="link_list_menu_nav"><a href="#">FAQ</a></li>
+                            <!-- TODO 1:1문의 로그인 체크 -->
+                            <li class="link_list_menu_nav"><a href="#">1:1문의</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- content -->
+                <section id="content">
+                    <article class="menu_content">
+                        <!-- 고객 서비스 -->
+                        <div class="item_content">
+                            <div class="header_table">
+                                <h2>
+                                   <span class="title_header_table">Notice</span>
+                                </h2>
+                                <span class="search_bar">
+                                    <select name="search_option" id="search_option" class="search_option">
+                                        <option value="title">제목</option>
+                                        <option value="content">내용</option>
+                                    </select>
+                                    <input type="text" class="search_text">
+                                    <input type="button" value="검색" class="search_btn">
+                                </span>
+                            </div>
+                            <c:if test="${ empty noticeList }">
+                            	<span>작성된 공지사항이 없습니다.</span>
+                            </c:if>
+                            <c:if test="${ not empty noticeList }">
+	                            <table class="table table-hover table_item_content">
 	                                <tr>
-	                                    <th width="10%">No</th>
-	                                    <th width="65%">Title</th>
-	                                    <th width="15%">Regdate</th>
-	                                    <th width="10%">Author</th>
+	                                    <th>No</th>
+	                                    <th>category</th>
+	                                    <th>Title</th>
+	                                    <th>Date</th>
+	                                    <th>View Count</th>
 	                                </tr>
-	
-	                                <!-- test temp data-->
+	                                <!-- sample data-->
 	                                <c:forEach var="notice" items="${ noticeList }">
 		                                <tr>
-		                                    <td>${ notice.notice_idx }</td>
-		                                    <td>
-		                                    	<a onclick="location.href='notice_view.do?notice_idx='+${ notice.notice_idx }; return false;" href="">${ notice.notice_title }</a>
-		                                    </td>
-		                                    <td>${ notice.notice_regdate }</td>
-		                                    <td>${ notice.notice_author }</td>
+		                                	<td style="width: 1%;">${ notice.notice_idx }</td>
+		                                	<td style="width: 1%;">${ notice.notice_category }</td>
+		                                	<td style="width: 1%;">
+		                                		<a href="#" class="link_notice_title">
+		                                			<span>${ notice.notice_title }</span>
+		                                		</a>
+		                                	</td >
+		                                	<td style="width: 1%;">${ notice.notice_regdate }</td>
+		                                	<td style="width: 1%;">${ notice.notice_view_count }</td>
 		                                </tr>
-									</c:forEach>
-	                            </tbody>
-	                        </table>
-                        </c:if>
-                    </div>
-                </div>
+	                                </c:forEach>
+	                            </table>
+                            </c:if>
+                            <div class="bottom_table">
+                            	<input type="button" value="글쓰기" class="write_btn" />                            
+                            </div>
+                        </div>
+                        <!-- paging -->
+                        <div class="paging_content">
+                            <span>◀ &nbsp;&nbsp;1&nbsp;&nbsp; 2&nbsp;&nbsp; 3&nbsp;&nbsp; ▶</span>
+                        </div>
+                    </article>
+                </section>
             </div>
-        </div>
-    </section>
-
-    <section id="content2">
-        <div class="content2_menu">
-            <div class="container">
-                <div class="row">
-                    <div class="content2_item">
-                        <a href="#">
-                            <div>EMPTY</div>
-                            <!-- 임시 메시지-->
-                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur amet laudantium ipsum modi. Dicta porro, dolore, omnis voluptatem assumenda similique aliquid inventore adipisci expedita nisi quis odit, maiores corrupti! Molestiae saepe, fugiat ipsam assumenda debitis nemo dicta numquam voluptates, vitae nostrum mollitia iste aperiam distinctio neque. Sequi magni officiis reiciendis adipisci. Deleniti cumque voluptatem doloribus provident voluptatibus nesciunt itaque hic, cum veniam quaerat ullam, esse qui eaque, consequatur. Cumque velit, architecto perspiciatis quas omnis nemo, quis et est, ab voluptatibus pariatur consequuntur tempora excepturi! Soluta numquam modi asperiores expedita. Impedit non optio perferendis delectus, quidem distinctio aliquam molestias quas velit omnis, dolorem culpa cumque deleniti vero sunt ex est excepturi. Nam inventore adipisci ea dolorem molestias vel aperiam provident illum, explicabo consequatur libero, quos enim vitae repellat pariatur officia. Facere delectus pariatur quisquam officia fugit voluptatum vitae nobis beatae suscipit laborum cupiditate optio, ipsum nesciunt reiciendis illum sunt, aliquam molestias fugiat quibusdam. Aut blanditiis consequatur ad totam aliquam fugit, eum quod odit similique! At nobis facilis est beatae impedit harum aspernatur suscipit sapiente, temporibus quam reprehenderit ex excepturi eaque veniam placeat cumque eius expedita repudiandae alias nulla, aut, perspiciatis maxime possimus doloribus. Suscipit, voluptatem magni eaque similique, non incidunt facere.</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- footer -->
-    <footer>
-        
-    </footer>
+        </main>
+        <!-- footer -->
+        <footer id="footer">
+            <span class="text_footer">footer</span>
+        </footer>
+    </div>
 
 </body></html>
