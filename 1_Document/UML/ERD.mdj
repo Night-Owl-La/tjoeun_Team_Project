@@ -181,7 +181,7 @@
 											"font": "Arial;13;1",
 											"left": 488,
 											"top": 37,
-											"width": 226.94873046875,
+											"width": 228.40234375,
 											"height": 13,
 											"text": "공지사항 [notice]"
 										},
@@ -207,7 +207,22 @@
 													"font": "Arial;13;0",
 													"left": 493,
 													"top": 60,
-													"width": 216.94873046875,
+													"width": 218.40234375,
+													"height": 13
+												},
+												{
+													"_type": "ERDColumnView",
+													"_id": "AAAAAAFvsbIFeoun99Q=",
+													"_parent": {
+														"$ref": "AAAAAAFvUHYNfQ1L6SY="
+													},
+													"model": {
+														"$ref": "AAAAAAFvsbIFRIukCz0="
+													},
+													"font": "Arial;13;0",
+													"left": 493,
+													"top": 75,
+													"width": 218.40234375,
 													"height": 13
 												},
 												{
@@ -221,8 +236,8 @@
 													},
 													"font": "Arial;13;0",
 													"left": 493,
-													"top": 75,
-													"width": 216.94873046875,
+													"top": 90,
+													"width": 218.40234375,
 													"height": 13
 												},
 												{
@@ -236,8 +251,23 @@
 													},
 													"font": "Arial;13;0",
 													"left": 493,
-													"top": 90,
-													"width": 216.94873046875,
+													"top": 105,
+													"width": 218.40234375,
+													"height": 13
+												},
+												{
+													"_type": "ERDColumnView",
+													"_id": "AAAAAAFvsbCoYYuc/qo=",
+													"_parent": {
+														"$ref": "AAAAAAFvUHYNfQ1L6SY="
+													},
+													"model": {
+														"$ref": "AAAAAAFvsbCoIYuZBEw="
+													},
+													"font": "Arial;13;0",
+													"left": 493,
+													"top": 120,
+													"width": 218.40234375,
 													"height": 13
 												},
 												{
@@ -251,8 +281,8 @@
 													},
 													"font": "Arial;13;0",
 													"left": 493,
-													"top": 105,
-													"width": 216.94873046875,
+													"top": 135,
+													"width": 218.40234375,
 													"height": 13
 												},
 												{
@@ -266,8 +296,8 @@
 													},
 													"font": "Arial;13;0",
 													"left": 493,
-													"top": 120,
-													"width": 216.94873046875,
+													"top": 150,
+													"width": 218.40234375,
 													"height": 13
 												},
 												{
@@ -281,23 +311,23 @@
 													},
 													"font": "Arial;13;0",
 													"left": 493,
-													"top": 135,
-													"width": 216.94873046875,
+													"top": 165,
+													"width": 218.40234375,
 													"height": 13
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 488,
 											"top": 55,
-											"width": 226.94873046875,
-											"height": 98
+											"width": 228.40234375,
+											"height": 128
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 488,
 									"top": 32,
-									"width": 226.94873046875,
-									"height": 121,
+									"width": 228.40234375,
+									"height": 151,
 									"nameLabel": {
 										"$ref": "AAAAAAFvUHYNfQ1K6UY="
 									},
@@ -1079,6 +1109,16 @@
 								},
 								{
 									"_type": "ERDColumn",
+									"_id": "AAAAAAFvsbIFRIukCz0=",
+									"_parent": {
+										"$ref": "AAAAAAFvUHYNfQ1H/RI="
+									},
+									"name": "notice_category",
+									"type": "VARCHAR",
+									"length": 0
+								},
+								{
+									"_type": "ERDColumn",
 									"_id": "AAAAAAFvUHtMcQ2Qbfw=",
 									"_parent": {
 										"$ref": "AAAAAAFvUHYNfQ1H/RI="
@@ -1095,6 +1135,16 @@
 									},
 									"name": "notice_content",
 									"type": "VARCHAR",
+									"length": 0
+								},
+								{
+									"_type": "ERDColumn",
+									"_id": "AAAAAAFvsbCoIYuZBEw=",
+									"_parent": {
+										"$ref": "AAAAAAFvUHYNfQ1H/RI="
+									},
+									"name": "notice_view_count",
+									"type": "INTEGER",
 									"length": 0
 								},
 								{
