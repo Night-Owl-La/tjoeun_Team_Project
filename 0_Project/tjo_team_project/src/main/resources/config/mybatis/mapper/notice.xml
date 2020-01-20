@@ -7,9 +7,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from notice order by notice_idx desc
 	</select>
 	
+	<!-- 조건별 처리 -->
+	<select id="notice_Condition_List" parameterType="Map" resultType="vo.NoticeVo">
+		select * 
+			from(
+				select rank() over(order by notice_idx desc) no, b.*
+				from ( select * from notice) b
+			)
+		where no between #{ start } and #{ end }
+	</select>
+	
+	<!-- row total -->
+	<select id="notice_RowTotal" resultType="int">
+		select nvl(count(*), 0) from notice
+	</select>
+	
 	<select id="notice_List_Idx" parameterType="int" resultType="vo.NoticeVo">
 		select * from notice where notice_idx = #{ notice_idx }
 	</select>
+	
+	<!-- insert -->
+	<insert id="notice_insert" parameterType="vo.NoticeVo">
+		insert into notice values(seq_notice_idx.nextVal, #{notice_category}, #{notice_title}, #{notice_content}, 0, sysdate, sysdate, #{notice_author})
+	</insert>
+	
+	<update id="notice_UpdateViewCount" parameterType="vo.NoticeVo">
+		update notice set notice_view_count = #{ notice_view_count }+1 where notice_idx = #{ notice_idx }
+	</update>
 </mapper>
 
 
