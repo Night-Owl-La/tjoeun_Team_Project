@@ -35,5 +35,15 @@ public class MovieInformation_Controller {
 		model.addAttribute("list", list);
 		return "test_result";
 	}
+	
+	@RequestMapping("test_one.do")
+	public String test_one(String docid, Model model) throws IOException {
+		
+		List<MovieInfoVo> list = API_MovieInformation_DB.selectMovieOne(docid);
+		
+		model.addAttribute("list", list);
+		return "test_result";
+	}
+	
 
 }

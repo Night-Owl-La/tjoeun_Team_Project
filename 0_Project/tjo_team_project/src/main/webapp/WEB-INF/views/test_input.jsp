@@ -19,6 +19,11 @@
     	form.submit();
 	}
     
+    function send_one(form) {
+    	form.action = "test_one.do";
+		form.submit();
+	}
+    
     </script>
 </head>
 
@@ -39,6 +44,7 @@
 
             <input type="text" name="search_Value">
             <input type="button" value="검색" onclick="send(this.form);">
+            <input type="button" value="하나검색" onclick="send_one(this.form);" />
         </form>
     </div>
 

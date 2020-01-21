@@ -12,6 +12,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -23,11 +25,13 @@ import vo.MovieInfoVo;
 public class API_MovieInformation_DB {
 
 	static final String url = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json.jsp";
+	
 
 	public static List<MovieInfoVo> searchMovieList(String search_Key, String search_Value) throws IOException {
 
 		// 0. URL 빌드.
-		StringBuilder urlBuilder = getRequestUrl(search_Key, search_Value);
+		StringBuilder urlBuilder = initRequestUrl();
+		urlBuilder = setRequestUrl(search_Key, search_Value, urlBuilder);
 
 		// 1. URL 커넥션 얻기.
 		HttpURLConnection conn = getUrlConnection(urlBuilder);
@@ -45,7 +49,39 @@ public class API_MovieInformation_DB {
 		return movieList;
 	}
 
-	private static StringBuilder getRequestUrl(String search_Key, String search_Value)
+	public static List<MovieInfoVo> selectMovieOne(String docid) throws IOException {
+		
+		// DOCID에서 {ID, SEQ} 분리
+		String movieId = docid.replaceAll("[0-9]", "").toString();
+		String movieSeq = docid.replaceAll("[^0-9]", "").toString();
+		
+		// 0. URL 빌드.
+		StringBuilder urlBuilder = initRequestUrl();
+		urlBuilder = setRequestUrl("movieId", movieId, urlBuilder);
+		urlBuilder = setRequestUrl("movieSeq", movieSeq, urlBuilder);
+		
+		System.out.println(urlBuilder.toString());
+
+		// 1. URL 커넥션 얻기.
+		HttpURLConnection conn = getUrlConnection(urlBuilder);
+
+		// 2. URL로부터 전체 JsonData 가져오기.
+		String jsonData = getUrlJsonData(conn);
+
+		// Connection close.
+		conn.disconnect();
+
+		// 3. GSON 파싱후 결과 리스트 받아오기.
+		List<MovieInfoVo> movieList = gsonParssing(jsonData);
+		
+		MovieInfoVo movie = movieList.get(0);
+		System.out.println(movie.getTitle());
+		
+		return movieList;
+	}
+	
+	
+	private static StringBuilder initRequestUrl()
 			throws UnsupportedEncodingException {
 
 		StringBuilder urlBuilder;
@@ -65,10 +101,18 @@ public class API_MovieInformation_DB {
 
 		// 최대 검색수.
 		urlBuilder.append("&listCount=10");
+		
+		// 정렬 방식.
+		urlBuilder.append("&sort=" + "prodYear");
 
-		// ------ 검색 값 -------
+		return urlBuilder;
+	}
+
+	@SuppressWarnings("unused")
+	private static StringBuilder setRequestUrl(String search_Key, String search_Value, StringBuilder urlBuilder) throws UnsupportedEncodingException {
+		
 		urlBuilder.append("&" + URLEncoder.encode(search_Key, "UTF-8") + "=" + URLEncoder.encode(search_Value, "UTF-8"));
-
+		
 		return urlBuilder;
 	}
 
@@ -78,7 +122,7 @@ public class API_MovieInformation_DB {
 		URL url = new URL(urlBuilder.toString());
 
 		// url check.
-		// System.out.println(url); // TODO
+		System.out.println(url); // TODO
 
 		// URL에서 커넥션 얻기.
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
