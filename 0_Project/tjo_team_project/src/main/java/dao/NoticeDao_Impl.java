@@ -31,8 +31,8 @@ public class NoticeDao_Impl implements NoticeDao {
 	}
 
 	@Override
-	public int notice_selectRowTotal() {
-		return sqlSession.selectOne("notice.notice_RowTotal");
+	public int notice_selectRowTotal(Map map) {
+		return sqlSession.selectOne("notice.notice_RowTotal", map);
 	}
 
 	@Override
