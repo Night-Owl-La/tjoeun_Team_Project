@@ -13,13 +13,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			from(
 				select rank() over(order by notice_idx desc) no, b.*
 				from ( select * from notice) b
+				<!-- 검색조건이 있을 때 -->
+				<trim prefix="where" prefixOverrides="or">
+					<if test="search_option == 'title'">
+						notice_title like '%' || #{ search_text } || '%'
+					</if>
+					<if test="search_option == 'category'">
+						notice_category like '%' || #{ search_text } || '%'
+					</if>
+				</trim>
 			)
 		where no between #{ start } and #{ end }
 	</select>
 	
 	<!-- row total -->
-	<select id="notice_RowTotal" resultType="int">
+	<select id="notice_RowTotal" parameterType="Map" resultType="int">
 		select nvl(count(*), 0) from notice
+			<!-- 검색조건이 있을 때 -->
+			<trim prefix="where" prefixOverrides="or">
+				<if test="search_option == 'title'">
+					notice_title like '%' || #{ search_text } || '%'
+				</if>
+				<if test="search_option == 'category'">
+					notice_category like '%' || #{ search_text } || '%'
+				</if>
+			</trim>
 	</select>
 	
 	<select id="notice_List_Idx" parameterType="int" resultType="vo.NoticeVo">
