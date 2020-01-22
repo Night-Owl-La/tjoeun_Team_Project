@@ -58,8 +58,6 @@ public class API_MovieInformation_DB {
 		StringBuilder urlBuilder = initRequestUrl();
 		urlBuilder = setRequestUrl("movieId", movieId, urlBuilder);
 		urlBuilder = setRequestUrl("movieSeq", movieSeq, urlBuilder);
-		
-		System.out.println(urlBuilder.toString());
 
 		// 1. URL 커넥션 얻기.
 		HttpURLConnection conn = getUrlConnection(urlBuilder);
