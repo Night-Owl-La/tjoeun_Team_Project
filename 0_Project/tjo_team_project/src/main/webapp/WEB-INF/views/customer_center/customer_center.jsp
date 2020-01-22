@@ -51,7 +51,7 @@
 			<div class="menu_nav">
 				<ul class="list_menu_nav">
 					<li class="link_list_menu_nav"><a href="#"
-						onclick="sendNotice();">Notice</a></li>
+						onclick="sendNotice('first');">Notice</a></li>
 					<li class="link_list_menu_nav"><a href="#">FAQ</a></li>
 					<!-- TODO 1:1문의 로그인 체크 -->
 					<li class="link_list_menu_nav"><a href="#">1:1문의</a></li>
@@ -76,23 +76,33 @@ $(function() {
 });
 
 function checkSelectPage() {
-	if(${param.selectPage eq 'notice'}) sendNotice();
+	if(${param.selectPage eq 'notice'}) sendNotice('refresh');
 	else if(${param.selectPage eq 'faq'}) sendFAQ();
 }
 
-function sendNotice() {
-	$.ajax({
-		url: '${pageContext.request.contextPath}/notice/notice.do',
-		data: { "page": '${ param.page}',
-				"selectPage": '${ param.selectPage }'
-		},
-		success: function(res_data) {
-			$('#disp').html(res_data);
-		},
-		error: function(error) {
-			alert(error);
-		}
-	});
+function sendNotice(select) {
+	
+	// 첫 페이지 요청.
+	if(select=='first'){
+		location.href='${pageContext.request.contextPath}/customer_center/customer_center.do?selectPage=notice&page=1';
+	}
+	// 콘텐츠 새로고침 요청.
+	else if(select=='refresh'){
+		$.ajax({
+			url: '${pageContext.request.contextPath}/notice/notice.do',
+			data: { "page": '${ param.page}',
+					"selectPage": '${ param.selectPage }',
+					"search_option": '${ param.search_option}',
+					"search_text": '${ param.search_text }'
+			},
+			success: function(res_data) {
+				$('#disp').html(res_data);
+			},
+			error: function(error) {
+				alert(error);
+			}
+		});
+	}
 }
 
 function sendFAQ() {

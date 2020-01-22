@@ -26,12 +26,14 @@
 							<h2>
 								<span class="title_header_table">Notice</span>
 							</h2>
-							<span class="search_bar"> <select name="search_option"
-								id="search_option" class="search_option">
+							<span class="search_bar"> 
+								<select name="search_option" class="search_option">
+									<option value="all">전체</option>
 									<option value="title">제목</option>
-									<option value="content">내용</option>
-							</select> <input type="text" class="search_text"> <input
-								type="button" value="검색" class="search_btn">
+									<option value="category">구분</option>
+								</select>
+								<input type="text" class="search_text"> 
+								<input type="button" value="검색" class="search_btn">
 							</span>
 						</div>
 						<c:if test="${ empty noticeList }">
@@ -79,6 +81,16 @@
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script type="text/javascript">
+	$(function() {
+		$('.search_btn').click(function() {
+			var search_option = $('.search_option').val();
+			var search_text = $('.search_text').val();
+			// 검색 요청 보내기.
+			location.href='${ pageContext.request.contextPath }/customer_center/customer_center.do?search_option='
+				+ search_option + '&search_text=' + encodeURIComponent(search_text)
+				+ '&selectPage=${ param.selectPage }&page=1';
+		});
+	});
 
 </script>
 </html>
