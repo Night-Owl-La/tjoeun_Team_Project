@@ -25,7 +25,6 @@ import vo.MovieInfoVo;
 public class API_MovieInformation_DB {
 
 	static final String url = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json.jsp";
-	
 
 	public static List<MovieInfoVo> searchMovieList(String search_Key, String search_Value) throws IOException {
 
@@ -74,15 +73,13 @@ public class API_MovieInformation_DB {
 		// 3. GSON 파싱후 결과 리스트 받아오기.
 		List<MovieInfoVo> movieList = gsonParssing(jsonData);
 		
+		// 영화 상세정보 한 개만 얻기
 		MovieInfoVo movie = movieList.get(0);
-		System.out.println(movie.getTitle());
 		
 		return movieList;
 	}
 	
-	
-	private static StringBuilder initRequestUrl()
-			throws UnsupportedEncodingException {
+	private static StringBuilder initRequestUrl() throws UnsupportedEncodingException {
 
 		StringBuilder urlBuilder;
 
@@ -108,7 +105,6 @@ public class API_MovieInformation_DB {
 		return urlBuilder;
 	}
 
-	@SuppressWarnings("unused")
 	private static StringBuilder setRequestUrl(String search_Key, String search_Value, StringBuilder urlBuilder) throws UnsupportedEncodingException {
 		
 		urlBuilder.append("&" + URLEncoder.encode(search_Key, "UTF-8") + "=" + URLEncoder.encode(search_Value, "UTF-8"));
@@ -122,7 +118,7 @@ public class API_MovieInformation_DB {
 		URL url = new URL(urlBuilder.toString());
 
 		// url check.
-		System.out.println(url); // TODO
+		//System.out.println(url); // TODO
 
 		// URL에서 커넥션 얻기.
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
