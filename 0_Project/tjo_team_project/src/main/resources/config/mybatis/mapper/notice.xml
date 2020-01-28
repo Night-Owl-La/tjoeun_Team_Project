@@ -49,9 +49,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into notice values(seq_notice_idx.nextVal, #{notice_category}, #{notice_title}, #{notice_content}, 0, sysdate, sysdate, #{notice_author})
 	</insert>
 	
+	<update id="notice_Update" parameterType="vo.NoticeVo">
+		update notice set notice_category = #{ notice_category }, notice_title = #{ notice_title }, notice_content = #{ notice_content }, notice_modifydate=sysdate where notice_idx = #{ notice_idx } 
+	</update>
+	
 	<update id="notice_UpdateViewCount" parameterType="vo.NoticeVo">
 		update notice set notice_view_count = #{ notice_view_count }+1 where notice_idx = #{ notice_idx }
 	</update>
+	
+	<delete id="notice_Delete" parameterType="int">
+		delete from notice where notice_idx = #{ notice_idx }
+	</delete>
 </mapper>
 
 

@@ -7,7 +7,7 @@ create table notice
 	notice_idx int,
 	notice_category varchar2(255) not null,
 	notice_title varchar2(255) not null,
-	notice_content varchar2(255) not null,
+	notice_content clob not null,
 	notice_view_count int,
 	notice_regdate date not null,
 	notice_modifydate date not null,

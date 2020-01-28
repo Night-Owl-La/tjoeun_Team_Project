@@ -77,7 +77,7 @@ public class Notice_Controller {
 	}
 	
 	@RequestMapping("/notice/notice_view.do")
-	public String notice_View(int notice_idx, Model model) {
+	public String notice_View(int notice_idx, Integer page, String selectPage, Model model) {
 		
 		NoticeVo noticeVo = noticeDao.notice_selectOne(notice_idx);
 		
@@ -88,6 +88,9 @@ public class Notice_Controller {
 		}
 		
 		model.addAttribute("noticeVo", noticeVo);
+		model.addAttribute("page", page);
+		model.addAttribute("selectPage", selectPage);
+		
 		return "customer_center/notice/notice_view";
 	}
 	
@@ -102,6 +105,33 @@ public class Notice_Controller {
 		model.addAttribute("page", page);
 		model.addAttribute("selectPage", selectPage);
 
+		return "redirect:/customer_center/customer_center.do";
+	}
+	
+	@RequestMapping("/notice/notice_update_form.do")
+	public String notice_Update_Form(NoticeVo vo, Model model) {
+		model.addAttribute("noticeVo", vo);
+		return "customer_center/notice/notice_modify_form"; 
+	}
+	
+	@RequestMapping("/notice/notice_update.do")
+	public String notice_Update(NoticeVo vo, Integer page, String selectPage, Model model) {
+		
+		int res = noticeDao.notice_Update(vo);
+		
+		model.addAttribute("page", page);
+		model.addAttribute("selectPage", selectPage);
+		return "redirect:/customer_center/customer_center.do"; 
+	}
+	
+	@RequestMapping("/notice/notice_delete.do")
+	public String notice_Delete(int notice_idx, Integer page, String selectPage, Model model) {
+		
+		int res = noticeDao.notice_Delete(notice_idx);
+		
+		model.addAttribute("page", page);
+		model.addAttribute("selectPage", selectPage);
+		
 		return "redirect:/customer_center/customer_center.do";
 	}
 

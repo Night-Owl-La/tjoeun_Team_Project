@@ -53,14 +53,12 @@ public class NoticeDao_Impl implements NoticeDao {
 
 	@Override
 	public int notice_Update(NoticeVo vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update("notice.notice_Update", vo);
 	}
 
 	@Override
 	public int notice_Delete(int notice_idx) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.delete("notice.notice_Delete", notice_idx);
 	}
 
 }

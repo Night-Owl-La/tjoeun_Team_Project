@@ -172,6 +172,39 @@ body{
     color: white;
 }
 
+#content .view_item_content{
+	border-top: 1px solid #eee;
+	margin:0;
+}
+
+#content .header_view_item_content{
+	border-bottom: 1px solid #eee;
+	padding: 10px;
+}
+
+#content .title_view_item_content{
+	text-align: left;
+}
+
+#content .flex_info_view_itme_content{
+	display: flex;
+	justify-content: space-between;
+}
+
+#content .author_view_item_content{
+}
+
+#content .regdate_view_item_content{
+}
+
+#content .viewcount_view_item_content{
+}
+
+#content .content_item{
+	display: inline-block;
+	padding: 10px;
+}
+
 #content .bottom_table{
 	display: flex;
     justify-content: flex-end;

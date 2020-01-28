@@ -54,7 +54,7 @@
 										<td style="width: 1%;">${ notice.notice_idx }</td>
 										<td style="width: 1%;">${ notice.notice_category }</td>
 										<td style="width: 1%;">
-											<a href="#" class="link_notice_title" onclick="location.href='${pageContext.request.contextPath}/notice/notice_view.do?notice_idx=${ notice.notice_idx }'">
+											<a href="#" class="link_notice_title" onclick="location.href='${pageContext.request.contextPath}/notice/notice_view.do?notice_idx=${ notice.notice_idx }&selectPage=${ param.selectPage }&page=${ param.page }'">
 												<span>${ notice.notice_title }</span>
 											</a>
 										</td>
