@@ -42,6 +42,11 @@
 				</div>
 			</div>
 		</header>
+		
+		<!-- title header main-->
+		<div class="title_header_main">
+			<a href="${ pageContext.request.contextPath }/customer_center/customer_main.do"> <span class="image_title_header_main"></span></a>
+		</div>
 
 		<!-- nav -->
 		<nav id="nav">
@@ -76,7 +81,7 @@ function sendNotice(select) {
 	
 	// 첫 페이지 요청.
 	if(select=='first'){
-		location.href='${pageContext.request.contextPath}/customer_center/customer_center.do?selectPage=notice&page=1';
+		location.href='${pageContext.request.contextPath}/notice/notice.do?selectPage=notice&page=1';
 	}
 	// 콘텐츠 새로고침 요청.
 	else if(select=='refresh'){
@@ -96,19 +101,6 @@ function sendNotice(select) {
 		});
 	}
 }
-
-function sendFAQ() {
-	$.ajax({
-		url: '${pageContext.request.contextPath}/customer_center/notice.do',
-		success: function(res_data) {
-			$('#disp').html(res_data);
-		},
-		error: function(error) {
-			alert(error);
-		}
-	});
-}
-
 
 </script>
 </html>

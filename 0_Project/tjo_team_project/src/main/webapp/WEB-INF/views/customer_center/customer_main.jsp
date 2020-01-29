@@ -50,19 +50,19 @@
             <section id="banner">
                 <div class="menu_banner">
                     <div class="item_banner">
-                        <a href="${pageContext.request.contextPath}/customer_center/customer_center.do?selectPage=notice&page=1" class="link_item_banner">
+                        <a href="${pageContext.request.contextPath}/notice/notice.do" class="link_item_banner">
                             <img src="${pageContext.request.contextPath}/resources/images/customer_center_images/search.png" alt="고객센터 공지사항">
                         </a>
                         <div class="title_item_banner">공지사항</div>
                     </div>
                     <div class="item_banner">
-                        <a href="${pageContext.request.contextPath}/resources/layout/faq_page.html" class="link_item_banner">
+                        <a href="#" class="link_item_banner">
                             <img src="${pageContext.request.contextPath}/resources/images/customer_center_images/FAQ.png" alt="고객센터 FAQ">
                         </a>
                         <div class="title_item_banner">FAQ</div>
                     </div>
                     <div class="item_banner">
-                        <a href="${pageContext.request.contextPath}/resources/layout/1by1_page.html" class="link_item_banner">
+                        <a href="#" class="link_item_banner">
                             <img src="${pageContext.request.contextPath}/resources/images/customer_center_images/1by1.png" alt="고객센터 1:1 문의">
                         </a>
                         <div class="title_item_banner">1:1 문의</div>

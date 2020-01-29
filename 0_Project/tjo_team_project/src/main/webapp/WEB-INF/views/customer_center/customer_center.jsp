@@ -84,7 +84,7 @@ function sendNotice(select) {
 	
 	// 첫 페이지 요청.
 	if(select=='first'){
-		location.href='${pageContext.request.contextPath}/customer_center/customer_center.do?selectPage=notice&page=1';
+		location.href='${pageContext.request.contextPath}/notice/notice.do?selectPage=notice&page=1';
 	}
 	// 콘텐츠 새로고침 요청.
 	else if(select=='refresh'){

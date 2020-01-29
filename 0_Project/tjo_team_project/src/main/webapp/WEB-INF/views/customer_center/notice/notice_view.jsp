@@ -9,14 +9,9 @@
 <body>
 	<%@include file="../customer_fixed.jsp" %>
 	<main id="wrap_main">
-		<!-- header main-->
-		<div class="title_header_main">
-			<a href="#"> <span class="image_title_header_main"></span></a>
-		</div>
 
 		<!-- inner_wrap main -->
 		<div class="inner_wrap_main">
-
 			<!-- content -->
 			<section id="content">
 				<article class="menu_content">
@@ -39,6 +34,7 @@
 						<form action="notice_delete.do">
 							<input type="hidden" name="selectPage" value="${ param.selectPage }" />
 							<input type="hidden" name="page" value="${ param.page }" />
+							<input type="hidden" name="notice_idx" value="${ noticeVo.notice_idx }">
 							<!-- table -->
 							<div class="view_item_content">
 								<div class="header_view_item_content">

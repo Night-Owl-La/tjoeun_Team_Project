@@ -15,6 +15,7 @@
 		<mapper resource="config/mybatis/mapper/notice.xml" />
 		<mapper resource="config/mybatis/mapper/faq.xml" />
 		<mapper resource="config/mybatis/mapper/oneby.xml" /> 
-		<mapper resource="config/mybatis/mapper/user.xml" />     
+		<mapper resource="config/mybatis/mapper/user.xml" />
+		<mapper resource="config/mybatis/mapper/reg_screen.xml" />     
 	</mappers>
 </configuration>

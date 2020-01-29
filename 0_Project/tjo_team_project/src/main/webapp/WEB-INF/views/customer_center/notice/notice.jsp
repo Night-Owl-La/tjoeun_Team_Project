@@ -7,13 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%@include file="../customer_fixed.jsp" %>
 
 	<main id="wrap_main">
-		<!-- header main-->
-		<div class="title_header_main">
-			<a href="#"> <span class="image_title_header_main"></span></a>
-		</div>
-
 		<!-- inner_wrap main -->
 		<div class="inner_wrap_main">
 
@@ -86,7 +82,7 @@
 			var search_option = $('.search_option').val();
 			var search_text = $('.search_text').val();
 			// 검색 요청 보내기.
-			location.href='${ pageContext.request.contextPath }/customer_center/customer_center.do?search_option='
+			location.href='${ pageContext.request.contextPath }/notice/notice.do?search_option='
 				+ search_option + '&search_text=' + encodeURIComponent(search_text)
 				+ '&selectPage=${ param.selectPage }&page=1';
 		});

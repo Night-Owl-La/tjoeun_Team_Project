@@ -14,7 +14,7 @@ public class CustomerCenter_Controller {
 	
 	@RequestMapping("/customer_center/customer_center.do")
 	public String showCustomerCenter() {
-		return "customer_center/customer_center";
+		return "customer_center/customer_fixed";
 	}
 	
 }

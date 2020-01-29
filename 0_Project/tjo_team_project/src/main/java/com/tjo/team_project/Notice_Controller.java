@@ -38,7 +38,7 @@ public class Notice_Controller {
 		
 		// # URL build.
 		StringBuilder url = new StringBuilder(request.getContextPath());
-		url.append("/customer_center/customer_center.do");
+		url.append("/notice/notice.do");
 		url.append("?selectPage=notice");
 		url.append("&search_option="+ (search_option == null ? "" : search_option));
 		url.append("&search_text="+ (search_text == null ? "" : search_text));
@@ -105,11 +105,12 @@ public class Notice_Controller {
 		model.addAttribute("page", page);
 		model.addAttribute("selectPage", selectPage);
 
-		return "redirect:/customer_center/customer_center.do";
+		return "redirect:/notice/notice.do";
 	}
 	
 	@RequestMapping("/notice/notice_update_form.do")
-	public String notice_Update_Form(NoticeVo vo, Model model) {
+	public String notice_Update_Form(int notice_idx, Model model) {
+		NoticeVo vo = noticeDao.notice_selectOne(notice_idx);
 		model.addAttribute("noticeVo", vo);
 		return "customer_center/notice/notice_modify_form"; 
 	}
@@ -121,7 +122,7 @@ public class Notice_Controller {
 		
 		model.addAttribute("page", page);
 		model.addAttribute("selectPage", selectPage);
-		return "redirect:/customer_center/customer_center.do"; 
+		return "redirect:/notice/notice.do"; 
 	}
 	
 	@RequestMapping("/notice/notice_delete.do")
@@ -132,7 +133,7 @@ public class Notice_Controller {
 		model.addAttribute("page", page);
 		model.addAttribute("selectPage", selectPage);
 		
-		return "redirect:/customer_center/customer_center.do";
+		return "redirect:/notice/notice.do";
 	}
 
 }
