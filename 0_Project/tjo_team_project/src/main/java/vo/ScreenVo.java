@@ -5,6 +5,7 @@ public class ScreenVo {
 	int scr_id;
 	int scr_seat_count;
 	int tht_idx;
+	String DOCID;
 
 	public int getScr_idx() {
 		return scr_idx;
@@ -36,6 +37,14 @@ public class ScreenVo {
 
 	public void setTht_idx(int tht_idx) {
 		this.tht_idx = tht_idx;
+	}
+
+	public String getDOCID() {
+		return DOCID;
+	}
+
+	public void setDOCID(String dOCID) {
+		DOCID = dOCID;
 	}
 
 }

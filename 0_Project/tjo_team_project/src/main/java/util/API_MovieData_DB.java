@@ -20,13 +20,13 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import vo.MovieInfoVo;
+import vo.API_MovieDataVo;
 
-public class API_MovieInformation_DB {
+public class API_MovieData_DB {
 
 	static final String url = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json.jsp";
 
-	public static List<MovieInfoVo> searchMovieList(String search_Key, String search_Value) throws IOException {
+	public static List<API_MovieDataVo> searchMovieList(String search_Key, String search_Value) throws IOException {
 
 		// 0. URL 빌드.
 		StringBuilder urlBuilder = initRequestUrl();
@@ -42,13 +42,13 @@ public class API_MovieInformation_DB {
 		conn.disconnect();
 
 		// 3. GSON 파싱후 결과 리스트 받아오기.
-		List<MovieInfoVo> movieList = gsonParssing(jsonData);
+		List<API_MovieDataVo> movieList = gsonParssing(jsonData);
 
 		// 4. 결과 리스트 반환.
 		return movieList;
 	}
 
-	public static List<MovieInfoVo> selectMovieOne(String docid) throws IOException {
+	public static API_MovieDataVo selectMovieOne(String docid) throws IOException {
 		
 		// DOCID에서 {ID, SEQ} 분리
 		String movieId = docid.replaceAll("[0-9]", "").toString();
@@ -69,12 +69,12 @@ public class API_MovieInformation_DB {
 		conn.disconnect();
 
 		// 3. GSON 파싱후 결과 리스트 받아오기.
-		List<MovieInfoVo> movieList = gsonParssing(jsonData);
+		List<API_MovieDataVo> movieList = gsonParssing(jsonData);
 		
 		// 영화 상세정보 한 개만 얻기
-		MovieInfoVo movie = movieList.get(0);
+		API_MovieDataVo movie = movieList.get(0);
 		
-		return movieList;
+		return movie;
 	}
 	
 	private static StringBuilder initRequestUrl() throws UnsupportedEncodingException {
@@ -181,13 +181,13 @@ public class API_MovieInformation_DB {
 		List resultArray = (List) dataMap.get("Result");
 
 		// 결과값이 파싱될 Vo 객체를 담는 리스트.
-		List<MovieInfoVo> movieList = new ArrayList<MovieInfoVo>();
+		List<API_MovieDataVo> movieList = new ArrayList<API_MovieDataVo>();
 
 		// 파싱.
 		for (Object resultObject : resultArray) {
 
 			// ---------Vo에 객체가 아닌 정보 삽입.-----------
-			MovieInfoVo movieVo = gson.fromJson(gson.toJson(resultObject).toString(), MovieInfoVo.class);
+			API_MovieDataVo movieVo = gson.fromJson(gson.toJson(resultObject).toString(), API_MovieDataVo.class);
 
 			// -------------객체타입 처리.---------------
 			// Result Map 얻기.
@@ -214,7 +214,7 @@ public class API_MovieInformation_DB {
 		return movieList;
 	}
 
-	private static MovieInfoVo dataFiltering(MovieInfoVo movieVo) {
+	private static API_MovieDataVo dataFiltering(API_MovieDataVo movieVo) {
 		// -- 제목 파싱. --
 		String re_Title = movieVo.getTitle().replace("!HS ", "").replace(" !HE ", "");
 		movieVo.setTitle(re_Title);

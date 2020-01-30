@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="screenTicket">
+	<select id="screenTicket_List" resultType="vo.ScreenTicketVo">
+		select * from screen_ticket
+	</select>
+	
+	<select id="screenTicket_One" parameterType="int" resultType="vo.ScreenTicketVo">
+		select * from screen_ticket where scr_idx = #{ scr_idx }
+	</select>
+	
+	<insert id="screenTicket_Insert" parameterType="vo.ScreenTicketVo">
+		insert into screen_ticket values(#{scr_idx}, #{scr_t_date}, #{scr_t_time}, #{scr_t_price})
+	</insert>
+	
+	<delete id="screenTicket_Delete" parameterType="int">
+		delete from screen_ticket where scr_idx = #{ scr_idx }
+	</delete>
+	
+</mapper>
+
+

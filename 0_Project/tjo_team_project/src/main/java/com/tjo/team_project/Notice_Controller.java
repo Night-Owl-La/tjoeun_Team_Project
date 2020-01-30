@@ -13,7 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import dao.NoticeDao;
-import util.MyConstant;
+import util.PagingConstant;
 import util.Paging;
 import vo.NoticeVo;
 
@@ -53,8 +53,8 @@ public class Notice_Controller {
 		// # page 처리.
 		if (page != null) nowPage = page;
 		
-		int start = (nowPage - 1) * MyConstant.Board.BLOCKLIST + 1;
-		int end = start + MyConstant.Board.BLOCKLIST - 1;
+		int start = (nowPage - 1) * PagingConstant.Board.BLOCKLIST + 1;
+		int end = start + PagingConstant.Board.BLOCKLIST - 1;
 		
 		// 검색조건 추가.
 		selectOptionMap.put("start", start);
@@ -62,7 +62,7 @@ public class Notice_Controller {
 		
 		int noticeRowTotal = noticeDao.notice_selectRowTotal(selectOptionMap);
 		System.out.println(noticeRowTotal);
-		String pageMenu = Paging.getPaging(url.toString(), nowPage, noticeRowTotal, MyConstant.Board.BLOCKLIST, MyConstant.Board.BLOCKPAGE);
+		String pageMenu = Paging.getPaging(url.toString(), nowPage, noticeRowTotal, PagingConstant.Board.BLOCKLIST, PagingConstant.Board.BLOCKPAGE);
 		
 		model.addAttribute("pageMenu", pageMenu);
 		

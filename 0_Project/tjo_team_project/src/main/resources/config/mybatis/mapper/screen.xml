@@ -7,8 +7,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from screen
 	</select>
 	
-	<select id="screen_One" parameterType="int" resultType="vo.ScreenVo">
+	<select id="screen_One_scr_idx" parameterType="int" resultType="vo.ScreenVo">
 		select * from screen where scr_idx = #{ scr_idx }
+	</select>
+	
+	<select id="screen_One_tht_idx" parameterType="int" resultType="vo.ScreenVo">
+		select * from screen where tht_idx = #{ tht_idx }
+	</select>
+	
+	<select id="screen_One_DOCID" parameterType="String" resultType="vo.ScreenVo">
+		select * from screen where docid = #{ DOCID }
 	</select>
 	
 	

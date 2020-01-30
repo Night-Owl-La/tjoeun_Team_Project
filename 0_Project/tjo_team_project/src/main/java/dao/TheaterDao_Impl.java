@@ -21,8 +21,8 @@ public class TheaterDao_Impl implements TheaterDao {
 	}
 
 	@Override
-	public TheaterVo selectOne(int tht_idx) {
-		return sqlSession.selectOne("theater.theater_One", tht_idx);
+	public TheaterVo selectOne_ThtIdx(int tht_idx) {
+		return sqlSession.selectOne("theater.theater_One_tht_idx", tht_idx);
 	}
 
 	@Override

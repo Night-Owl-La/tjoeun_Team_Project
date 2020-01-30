@@ -10,17 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import dao.RegScreenDao;
-import dao.ScreenRegInfoDao;
 import service.ScreenAllData;
-import util.API_MovieInformation_DB;
-import vo.MovieInfoVo;
-import vo.RegScreenVo;
+import util.API_MovieData_DB;
+import vo.API_MovieDataVo;
 import vo.ScreenAllDataVo;
-import vo.ScreenRegInfoVo;
 
 @Controller
-public class regScreen_Controller {
+public class ScreenManager_Controller {
 	
 	@Autowired
 	HttpServletRequest request;
@@ -28,47 +24,51 @@ public class regScreen_Controller {
 	@Autowired
 	ScreenAllData screenAllData;
 	
-	@RequestMapping("/movieManager/movieReg.do")
+	@RequestMapping("/screenManager/search_movie_form.do")
 	public String movieReg() {
-		return "movieManager/movieReg";
+		return "screenManager/search_movie_form";
 	}
 	
-	@RequestMapping("/movieManager/listAll.do")
+	@RequestMapping("/screenManager/search_movie_list.do")
 	public String movieListAll(Model model) throws IOException {
 		String search_Key = request.getParameter("search_Key");
 		String search_Value = request.getParameter("search_Value");
 		
-		List<MovieInfoVo> list = API_MovieInformation_DB.searchMovieList(search_Key, search_Value);
+		List<API_MovieDataVo> list = API_MovieData_DB.searchMovieList(search_Key, search_Value);
 		
 		model.addAttribute("list", list);
-		return "movieManager/movieResult";
+		
+		return "screenManager/search_movie_list";
 	}
 	
-	@RequestMapping("/movieManager/regScreenList.do")
-	public String regScreenList() {
-		return "";
-	}
-	
-	@RequestMapping("/movieManager/regScreenOne.do")
+	@RequestMapping("/screenManager/screen_data_view.do")
 	public String regScreenOne(String DOCID, Model model) {
 		ScreenAllDataVo vo = screenAllData.selectOne("F48331");
 		// F41181
 		// F32196
 		
-		model.addAttribute("scrRegInfoVo", vo.getScrRegInfoVo());
-		model.addAttribute("scrDateVo", vo.getScrDateVo());
-		model.addAttribute("scrVo", vo.getScrVo());
-		model.addAttribute("theaterVo", vo.getTheaterVo());
+		System.out.println(vo.getScrRegInfoVo().getScr_reg_title());
+		System.out.println(vo.getScrVo().getScr_id());
+		System.out.println(vo.getScrTicketVo().getScr_t_price());
+		System.out.println(vo.getTheaterVo().getTht_location());
+		System.out.println(vo.getScrSeatVo().getScr_idx());
 		
-		return "movieManager/regScreenView";
+		model.addAttribute("scrRegInfoVo", vo.getScrRegInfoVo());
+		model.addAttribute("scrVo", vo.getScrVo());
+		model.addAttribute("scrTicketVo", vo.getScrTicketVo());
+		model.addAttribute("theaterVo", vo.getTheaterVo());
+		model.addAttribute("scrSeatVo", vo.getScrSeatVo());
+		
+		return "screenManager/screen_data_view";
 	}
 	
-	@RequestMapping("/movieManager/insert.do")
-	public String movieInsert(RegScreenVo vo) {
+	@RequestMapping("/screenManager/insert.do")
+	public String movieInsert() { // TODO 전달인자 및 메소드 튜닝.
 		
 		//int res = regScreenDao.insert(vo);
 		
-		return "redirect:movieManager/regScreenList.do";
+		return "redirect:/screenManager/screen_data_view.do";
 	}
+
 
 }

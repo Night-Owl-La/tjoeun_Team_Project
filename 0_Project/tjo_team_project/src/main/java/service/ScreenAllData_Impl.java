@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.ScreenDao;
-import dao.ScreenDateDao;
+import dao.ScreenTicketDao;
 import dao.ScreenRegInfoDao;
+import dao.ScreenSeatDao;
 import dao.TheaterDao;
 import vo.ScreenAllDataVo;
-import vo.ScreenDateVo;
 import vo.ScreenRegInfoVo;
+import vo.ScreenSeatVo;
+import vo.ScreenTicketVo;
 import vo.ScreenVo;
 import vo.TheaterVo;
 
@@ -22,13 +24,16 @@ public class ScreenAllData_Impl implements ScreenAllData {
 	ScreenRegInfoDao screenRegInfoDao;
 	
 	@Autowired
-	ScreenDateDao screenDateDao;
+	ScreenTicketDao screenTicketDao;
 	
 	@Autowired
 	ScreenDao screenDao;
 	
 	@Autowired
 	TheaterDao theaterDao;
+	
+	@Autowired
+	ScreenSeatDao screenSeatDao;
 
 	@Override
 	public List<ScreenAllDataVo> selectList() {
@@ -44,15 +49,17 @@ public class ScreenAllData_Impl implements ScreenAllData {
 	public ScreenAllDataVo selectOne(String DOCID) {
 		ScreenAllDataVo vo = new ScreenAllDataVo();
 		
-		ScreenRegInfoVo scrRegInfoVo = screenRegInfoDao.selectOne(DOCID);
-		ScreenDateVo scrDateVo = screenDateDao.selectOne(DOCID);
-		ScreenVo scrVo = screenDao.selectOne(scrRegInfoVo.getScr_idx());
-		TheaterVo theaterVo = theaterDao.selectOne(scrVo.getTht_idx());
+		ScreenRegInfoVo scrRegInfoVo = screenRegInfoDao.selectOne_DOCID(DOCID);
+		ScreenVo scrVo = screenDao.selectOne_DOCID(DOCID);
+		ScreenTicketVo scrTicketVo = screenTicketDao.selectOne_ScrIdx(scrVo.getScr_idx());
+		TheaterVo theaterVo = theaterDao.selectOne_ThtIdx(scrVo.getTht_idx());
+		ScreenSeatVo scrSeatVo = screenSeatDao.selectOne_ScrIdx(scrVo.getScr_idx());
 		
 		vo.setScrRegInfoVo(scrRegInfoVo);
-		vo.setScrDateVo(scrDateVo);
 		vo.setScrVo(scrVo);
+		vo.setScrTicketVo(scrTicketVo);
 		vo.setTheaterVo(theaterVo);
+		vo.setScrSeatVo(scrSeatVo);
 		
 		return vo;
 	}

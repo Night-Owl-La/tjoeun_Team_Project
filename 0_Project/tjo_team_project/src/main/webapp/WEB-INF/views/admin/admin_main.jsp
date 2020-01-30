@@ -8,7 +8,7 @@
 </head>
 <body>
 <input type="button" value="회원관리"  />
-<input type="button" value="영화등록" onclick="location.href='${ pageContext.request.contextPath }/movieManager/movieReg.do'" />
+<input type="button" value="영화등록" onclick="location.href='${ pageContext.request.contextPath }/screenManager/search_movie_form.do'" />
 
 </body>
 </html>

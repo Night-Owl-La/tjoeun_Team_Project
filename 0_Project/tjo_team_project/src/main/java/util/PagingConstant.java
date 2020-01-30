@@ -1,6 +1,6 @@
 package util;
 
-public class MyConstant {
+public class PagingConstant {
 	public static class Board{
 		public static final int BLOCKLIST = 5;
 		public static final int BLOCKPAGE = 5;

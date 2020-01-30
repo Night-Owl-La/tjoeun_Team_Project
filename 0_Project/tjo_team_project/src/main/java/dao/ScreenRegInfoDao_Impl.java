@@ -20,14 +20,13 @@ public class ScreenRegInfoDao_Impl implements ScreenRegInfoDao {
 	}
 
 	@Override
-	public ScreenRegInfoVo selectOne(String DOCID) {
+	public ScreenRegInfoVo selectOne_DOCID(String DOCID) {
 		return sqlSession.selectOne("screenRegInfo.screenRegInfo_One", DOCID);
 	}
 
 	@Override
 	public int insert(ScreenRegInfoVo vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.insert("screenRegInfo.screenRegInfo_Insert", vo);
 	}
 
 	@Override
@@ -38,8 +37,7 @@ public class ScreenRegInfoDao_Impl implements ScreenRegInfoDao {
 
 	@Override
 	public int delete(int DOCID) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.delete("screenRegInfo.screenRegInfo_Delete", DOCID);
 	}
 
 }

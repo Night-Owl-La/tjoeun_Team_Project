@@ -6,8 +6,8 @@ create table screen
 (
 	scr_idx int,
 	scr_id int not null,
-	scr_seat_count int,
-	tht_idx int,
+	scr_seat_count int not null,
+	tht_idx int not null,
 	DOCID varchar(255)
 );
 
@@ -15,8 +15,6 @@ create table screen
 alter table screen add constraint pk_screen_idx primary key(scr_idx);
 alter table screen add constraint fk_screen_idx foreign key(tht_idx) references theater(tht_idx) on delete cascade;
 alter table screen add constraint fk_screen_docid foreign key(DOCID) references screen_reg_info(DOCID);
-
-alter table screen add DOCID varchar(255)
 
 -- 3. sample data 삽입.
 insert into screen values(seq_screen_idx.nextVal, 1, 25, 1, 'F48331');

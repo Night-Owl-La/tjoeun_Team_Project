@@ -7,10 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${ scrRegInfoVo.DOCID }
-	${ scrDateVo.scr_d_date }
-	${ scrVo.scr_seat_count }
-	${ theaterVo.tht_name }
-
+	<!--
+		-- 전달된 VO --
+		 
+		 scrRegInfoVo
+		 scrVo
+		 scrTicketVo
+		 theaterVo
+		 scrSeatVo
+	 -->
 </body>
 </html>

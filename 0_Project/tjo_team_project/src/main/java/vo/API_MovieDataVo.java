@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
-public class MovieInfoVo {
+public class API_MovieDataVo {
 	String DOCID;
 
 	// 영화 등록 ID.

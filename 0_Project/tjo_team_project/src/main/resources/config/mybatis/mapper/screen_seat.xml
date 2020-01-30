@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="screen_seat">
+	<select id="screen_seat_List" resultType="vo.ScreenSeatVo">
+		select * from screen_seat
+	</select>
+	
+	<select id="screen_seat_One_scr_idx" parameterType="int" resultType="vo.ScreenSeatVo">
+		select * from screen_seat where scr_idx = #{ scr_idx }
+	</select>
+	
+	<update id="screen_seat_Update" parameterType="vo.ScreenSeat_BK_Vo">
+		update screen_seat set #{ seat_id } = #{ seat_is_selectd }
+	</update>
+	
+	
+</mapper>
+
+

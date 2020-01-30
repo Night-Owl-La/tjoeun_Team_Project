@@ -31,7 +31,7 @@
 
     <div style="width:600; height: 600;">
 
-        <form action="listAll.do">
+        <form action="search_movie_list.do">
             <select name="search_Key">
                 <option value="keyword">검색선택</option>
                 <option value="title">제목</option>

@@ -10,11 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import util.API_MovieInformation_DB;
-import vo.MovieInfoVo;
+import util.API_MovieData_DB;
+import vo.API_MovieDataVo;
 
 @Controller
-public class MovieInformation_Controller {
+public class _TestMovie_Controller {
 	
 	@Autowired
 	HttpServletRequest request;
@@ -30,7 +30,7 @@ public class MovieInformation_Controller {
 		String search_Key = request.getParameter("search_Key");
 		String search_Value = request.getParameter("search_Value");
 		
-		List<MovieInfoVo> list = API_MovieInformation_DB.searchMovieList(search_Key, search_Value);
+		List<API_MovieDataVo> list = API_MovieData_DB.searchMovieList(search_Key, search_Value);
 		
 		model.addAttribute("list", list);
 		return "test_result";
@@ -40,9 +40,10 @@ public class MovieInformation_Controller {
 	public String test_one(String docid, Model model) throws IOException {
 		//docid = "F48331";
 		
-		List<MovieInfoVo> list = API_MovieInformation_DB.selectMovieOne(docid);
+		//List<API_MovieDataVo> list = API_MovieData_DB.selectMovieOne(docid);
+		API_MovieDataVo vo = API_MovieData_DB.selectMovieOne(docid);
 		
-		model.addAttribute("list", list);
+		//model.addAttribute("list", list);
 		return "test_result";
 	}
 	

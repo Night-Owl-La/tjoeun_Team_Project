@@ -34,40 +34,39 @@ create table screen_seat
 );
 
 -- 2. 제약조건 추가.
-alter table screen_seat add constraint pk_screen_seat_idx primary key(scr_idx);
 alter table screen_seat add constraint fk_screen_seat_idx foreign key(scr_idx) references screen(scr_idx) on delete cascade;
 
 -- 3. sample data 삽입.
 insert into screen_seat values
-	( 32, 
+	( 1, 
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0 );
 insert into screen_seat values
-	( 33, 
+	( 2, 
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0 );
 insert into screen_seat values
-	( 34, 
+	( 3, 
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0 );
 insert into screen_seat values
-	( 30, 
+	( 4, 
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0 );
 insert into screen_seat values
-	( 31, 
+	( 5, 
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,

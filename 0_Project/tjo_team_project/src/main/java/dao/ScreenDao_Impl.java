@@ -21,8 +21,18 @@ public class ScreenDao_Impl implements ScreenDao {
 	}
 
 	@Override
-	public ScreenVo selectOne(int scr_idx) {
-		return sqlSession.selectOne("screen.screen_One", scr_idx);
+	public ScreenVo selectOne_ScrIdx(int scr_idx) {
+		return sqlSession.selectOne("screen.screen_One_scr_idx", scr_idx);
+	}
+	
+	@Override
+	public ScreenVo selectOne_ThtIdx(int tht_idx) {
+		return sqlSession.selectOne("screen.screen_One_tht_idx", tht_idx);
+	}
+	
+	@Override
+	public ScreenVo selectOne_DOCID(String DOCID) {
+		return sqlSession.selectOne("screen.screen_One_DOCID", DOCID);
 	}
 
 	@Override

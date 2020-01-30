@@ -2,7 +2,8 @@ package vo;
 
 public class ScreenAllDataVo {
 	ScreenRegInfoVo scrRegInfoVo;
-	ScreenDateVo scrDateVo;
+	ScreenTicketVo scrTicketVo;
+	ScreenSeatVo scrSeatVo;
 	ScreenVo scrVo;
 	TheaterVo theaterVo;
 
@@ -14,12 +15,20 @@ public class ScreenAllDataVo {
 		this.scrRegInfoVo = scrRegInfoVo;
 	}
 
-	public ScreenDateVo getScrDateVo() {
-		return scrDateVo;
+	public ScreenTicketVo getScrTicketVo() {
+		return scrTicketVo;
 	}
 
-	public void setScrDateVo(ScreenDateVo scrDateVo) {
-		this.scrDateVo = scrDateVo;
+	public void setScrTicketVo(ScreenTicketVo scrTicketVo) {
+		this.scrTicketVo = scrTicketVo;
+	}
+
+	public ScreenSeatVo getScrSeatVo() {
+		return scrSeatVo;
+	}
+
+	public void setScrSeatVo(ScreenSeatVo scrSeatVo) {
+		this.scrSeatVo = scrSeatVo;
 	}
 
 	public ScreenVo getScrVo() {

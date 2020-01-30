@@ -11,6 +11,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from screen_reg_info where docid = #{ DOCID }
 	</select>
 	
+	<insert id="screenRegInfo_Insert" parameterType="vo.ScreenRegInfoVo">
+		insert into screen_reg_info values(#{DOCID}, #{src_reg_title})
+	</insert>
+	
+	<delete id="screenRegInfo_Delete" parameterType="String">
+		delete from screen_reg_info where docid = #{ DOCID }
+	</delete>
 	
 </mapper>
 
