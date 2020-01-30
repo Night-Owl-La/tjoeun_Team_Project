@@ -6,39 +6,39 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import vo.FaqVo;
+import vo.TheaterVo;
 
-@Repository("faqDao")
-public class FaqDao_Impl implements FaqDao {
+@Repository("theaterDao")
+public class TheaterDao_Impl implements TheaterDao {
 
 	@Autowired
 	SqlSession sqlSession;
-
+	
 	@Override
-	public List<FaqVo> faq_selectList() {
-		return sqlSession.selectList("faq.faq_List");
-	}
-
-	@Override
-	public FaqVo faq_selectOne(String faq_title) {
+	public List<TheaterVo> selectList() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int faq_Insert(FaqVo vo) {
+	public TheaterVo selectOne(int tht_idx) {
+		return sqlSession.selectOne("theater.theater_One", tht_idx);
+	}
+
+	@Override
+	public int insert(TheaterVo vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int faq_Update(FaqVo vo) {
+	public int update(TheaterVo vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int faq_Delete(int faq_idx) {
+	public int delete(int tht_idx) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

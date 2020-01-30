@@ -6,39 +6,39 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import vo.OnebyVo;
+import vo.ScreenDateVo;
 
-@Repository("onebyDao")
-public class OnebyDao_Impl implements OnebyDao {
-	
+@Repository("screenDateDao")
+public class ScreenDateDao_Impl implements ScreenDateDao {
+
 	@Autowired
 	SqlSession sqlSession;
-
+	
 	@Override
-	public List<OnebyVo> oneby_selectList(int user_idx) {
-		return sqlSession.selectList("oneby.oneby_List", user_idx);
-	}
-
-	@Override
-	public OnebyVo oneby_selectOne(String oneby_category) {
+	public List<ScreenDateVo> selectList() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int oneby_Insert(OnebyVo vo) {
+	public ScreenDateVo selectOne(String DOCID) {
+		return sqlSession.selectOne("screenDate.screenDate_One", DOCID);
+	}
+
+	@Override
+	public int insert(ScreenDateVo vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int oneby_Update(OnebyVo vo) {
+	public int update(ScreenDateVo vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int oneby_Delete(int oneby_idx) {
+	public int delete(int scr_idx) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

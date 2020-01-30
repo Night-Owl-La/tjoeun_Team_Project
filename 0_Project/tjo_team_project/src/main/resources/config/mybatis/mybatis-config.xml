@@ -13,9 +13,11 @@
 
 	<mappers>
 		<mapper resource="config/mybatis/mapper/notice.xml" />
-		<mapper resource="config/mybatis/mapper/faq.xml" />
-		<mapper resource="config/mybatis/mapper/oneby.xml" /> 
 		<mapper resource="config/mybatis/mapper/user.xml" />
-		<mapper resource="config/mybatis/mapper/reg_screen.xml" />     
+		<mapper resource="config/mybatis/mapper/reg_screen.xml" />
+		<mapper resource="config/mybatis/mapper/screen_reg_info.xml" />
+		<mapper resource="config/mybatis/mapper/screen_date.xml" />
+		<mapper resource="config/mybatis/mapper/screen.xml" />
+		<mapper resource="config/mybatis/mapper/theater.xml" />
 	</mappers>
 </configuration>

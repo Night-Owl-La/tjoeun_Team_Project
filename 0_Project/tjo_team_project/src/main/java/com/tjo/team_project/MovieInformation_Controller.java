@@ -38,6 +38,7 @@ public class MovieInformation_Controller {
 	
 	@RequestMapping("test_one.do")
 	public String test_one(String docid, Model model) throws IOException {
+		//docid = "F48331";
 		
 		List<MovieInfoVo> list = API_MovieInformation_DB.selectMovieOne(docid);
 		

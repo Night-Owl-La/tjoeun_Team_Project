@@ -116,7 +116,7 @@ public class API_MovieInformation_DB {
 		URL url = new URL(urlBuilder.toString());
 
 		// url check.
-		//System.out.println(url); // TODO
+		System.out.println(url); // TODO
 
 		// URL에서 커넥션 얻기.
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();

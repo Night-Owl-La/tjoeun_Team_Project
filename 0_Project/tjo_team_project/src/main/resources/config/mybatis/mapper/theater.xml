@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="theater">
+	<select id="theater_List" resultType="vo.TheaterVo">
+		select * from theater
+	</select>
+	
+	<select id="theater_One" parameterType="int" resultType="vo.TheaterVo">
+		select * from theater where tht_idx = #{ tht_idx }
+	</select>
+	
+	
+</mapper>
+
+
