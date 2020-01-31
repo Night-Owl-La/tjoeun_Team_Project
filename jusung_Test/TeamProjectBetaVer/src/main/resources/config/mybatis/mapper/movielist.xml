@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="movielist">
+	
+	<!-- 전체조회 -->
+	<select id="movielist_list"
+			resultType="movielist">
+		select * from movielist order by idx desc
+	</select>
+	
+	<!-- 한개 항목 조회 -->
+	<select id="movielist_one"
+			parameterType="int"
+			resultType="movielist">
+		select * from movielist where idx = #{ idx }
+	</select>
+	
+	<!-- INSERT -->
+	<insert id="movielist_insert"
+			parameterType="movielist">
+		insert into movielist values(idx,
+								#{ml_title},
+								#{ml_poster},
+								#{ml_plot},
+								#{ml_directorList},
+								#{ml_actorList},
+								#{ml_runtime},
+								#{ml_ratingGrade},
+								#{ml_prodYear},
+								#{ml_company},
+								#{user_idx})
+	</insert>
+	
+	<!-- MODIFY -->
+	<update id="movielist_update"
+			parameterType="movielist">
+		update movielist set ml_title=#{ml_title},
+							 ml_poster=#{ml_poster},
+							 ml_plot=#{ml_plot},
+							 ml_directorList=#{ml_directorList},
+							 ml_actorList=#{ml_actorList},
+							 ml_runtime=#{ml_runtime},
+							 ml_ratingGrade=#{ml_ratingGrade},
+							 ml_prodYear=#{ml_prodYear},
+							 ml_company=#{ml_company}
+		 where idx=#{idx}
+	</update>
+	
+	<!-- DELETE -->
+	<delete id="movielist_delete"
+			parameterType="int">
+		delete from movielist where idx=#{idx}
+	</delete>
+
+
+</mapper>
+

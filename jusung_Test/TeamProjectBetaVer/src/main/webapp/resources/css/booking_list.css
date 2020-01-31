@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* CSS RESET */
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+	color: #fff;
+	font-family: consolas;
+	
+}
+
+/* NAVIGATION BAR */
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+#logo {
+	width: 40px;
+}
+
+.nav-link {
+	color: #fff;
+}
+
+
+/* 본문 */
+.container-fluid {
+	
+}
+
+.wrap {
+	position: relative;
+	width: 80%;
+	margin: 50px auto;
+}
+
+.ticket_title {
+	margin-top: 80px;
+	text-align: center;
+	color: #fff;
+	font-size: 2.5rem;
+	color: #80ff80;
+}
+
+form {
+	text-align: center;
+}
+
+#poster {
+	width: 50%;
+	margin: 30px auto;
+}
+
+#poster_image {
+	display: inline;
+	width: 50%;
+	border-radius: 5%;
+}
+
+#content_outline {
+	height: 100%;
+	margin: 50px;
+}
+
+.poster_cnt {
+	width: 60%;
+	margin: 50px auto;
+	overflow: hidden;
+}
+
+.poster_txt {
+	float: left;
+	height: 100%;
+	text-align: center;
+}
+
+.poster_txt.one {
+	width: 50%;
+	text-align: right;
+	padding: 10px;
+}
+
+.poster_txt.two {
+	width: 50%;
+	text-align: left;
+	padding: 10px;
+}
+

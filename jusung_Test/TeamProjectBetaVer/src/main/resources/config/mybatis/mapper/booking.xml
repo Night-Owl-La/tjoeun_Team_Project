@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="booking">
+	
+	<!-- 전체 조회 -->
+	<select id="booking_list"
+			resultType="booking">
+		select * from booking order by bk_idx desc
+	</select>
+	
+	<select id="booking_list_one"
+			parameterType="String"
+			resultType="booking">
+		select * from booking where docid = #{ docid }
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
