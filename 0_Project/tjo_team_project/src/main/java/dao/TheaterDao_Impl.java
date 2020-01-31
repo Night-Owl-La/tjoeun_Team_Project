@@ -16,8 +16,7 @@ public class TheaterDao_Impl implements TheaterDao {
 	
 	@Override
 	public List<TheaterVo> selectList() {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList("theater.theater_List");
 	}
 
 	@Override

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import dao.ScreenSeatDao;
 import util.API_MovieData_DB;
 import vo.API_MovieDataVo;
 
@@ -18,6 +19,9 @@ public class _TestMovie_Controller {
 	
 	@Autowired
 	HttpServletRequest request;
+	
+	@Autowired
+	ScreenSeatDao screenSeatDao;
 	
 	@RequestMapping("test_form.do")
 	public String test_input() {
@@ -45,6 +49,12 @@ public class _TestMovie_Controller {
 		
 		//model.addAttribute("list", list);
 		return "test_result";
+	}
+	
+	@RequestMapping("latest")
+	public String latest() {
+		screenSeatDao.selectOne_ScrIdx_Map(1);
+		return "";
 	}
 	
 

@@ -48,12 +48,18 @@ public class ScreenAllData_Impl implements ScreenAllData {
 	@Override
 	public ScreenAllDataVo selectOne(String DOCID) {
 		ScreenAllDataVo vo = new ScreenAllDataVo();
+		int scr_idx;
+		int tht_idx;
+		
+		ScreenVo scrVo = screenDao.selectOne_DOCID(DOCID);
+		scr_idx = scrVo.getScr_idx();
+		tht_idx = scrVo.getTht_idx();
 		
 		ScreenRegInfoVo scrRegInfoVo = screenRegInfoDao.selectOne_DOCID(DOCID);
-		ScreenVo scrVo = screenDao.selectOne_DOCID(DOCID);
-		ScreenTicketVo scrTicketVo = screenTicketDao.selectOne_ScrIdx(scrVo.getScr_idx());
-		TheaterVo theaterVo = theaterDao.selectOne_ThtIdx(scrVo.getTht_idx());
-		ScreenSeatVo scrSeatVo = screenSeatDao.selectOne_ScrIdx(scrVo.getScr_idx());
+		ScreenTicketVo scrTicketVo = screenTicketDao.selectOne_ScrIdx(scr_idx);
+		TheaterVo theaterVo = theaterDao.selectOne_ThtIdx(tht_idx);
+		ScreenSeatVo scrSeatVo = screenSeatDao.selectOne_ScrIdx(scr_idx);
+		scrSeatVo.setSeatMap(screenSeatDao.selectOne_ScrIdx_Map(scr_idx));
 		
 		vo.setScrRegInfoVo(scrRegInfoVo);
 		vo.setScrVo(scrVo);

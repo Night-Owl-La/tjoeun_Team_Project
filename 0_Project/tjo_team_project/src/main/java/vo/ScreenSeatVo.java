@@ -1,5 +1,7 @@
 package vo;
 
+import java.util.Map;
+
 public class ScreenSeatVo {
 	int scr_idx;
 	int A1, A2, A3, A4, A5;
@@ -7,6 +9,16 @@ public class ScreenSeatVo {
 	int C1, C2, C3, C4, C5;
 	int D1, D2, D3, D4, D5;
 	int E1, E2, E3, E4, E5;
+
+	Map<String, Integer> seatMap;
+
+	public Map<String, Integer> getSeatMap() {
+		return seatMap;
+	}
+
+	public void setSeatMap(Map<String, Integer> seatMap) {
+		this.seatMap = seatMap;
+	}
 
 	public int getScr_idx() {
 		return scr_idx;

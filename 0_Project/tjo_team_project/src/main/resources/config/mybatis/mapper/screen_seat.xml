@@ -11,6 +11,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from screen_seat where scr_idx = #{ scr_idx }
 	</select>
 	
+	<select id="screen_seat_One_scr_idx_Map" parameterType="int" resultType="java.util.TreeMap">
+		select * from screen_seat where scr_idx = #{ scr_idx }
+	</select>
+	
 	<update id="screen_seat_Update" parameterType="vo.ScreenSeat_BK_Vo">
 		update screen_seat set #{ seat_id } = #{ seat_is_selectd }
 	</update>
