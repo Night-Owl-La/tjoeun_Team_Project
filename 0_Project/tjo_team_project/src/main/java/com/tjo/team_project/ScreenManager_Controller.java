@@ -10,14 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import dao.ScreenTicketDao;
-import dao.TheaterDao;
-import service.ScreenAllData;
+import dao.Screen_RegdataDao;
 import util.API_MovieData_DB;
 import vo.API_MovieDataVo;
-import vo.ScreenAllDataVo;
-import vo.ScreenTicketVo;
-import vo.TheaterVo;
 
 @Controller
 public class ScreenManager_Controller {
@@ -26,13 +21,7 @@ public class ScreenManager_Controller {
 	HttpServletRequest request;
 	
 	@Autowired
-	ScreenAllData screenAllData;
-	
-	@Autowired
-	TheaterDao theaterDao;
-	
-	@Autowired
-	ScreenTicketDao screenTicketDao;
+	Screen_RegdataDao screen_RegdataDao;
 	
 	@RequestMapping("/screenManager/search_form.do")
 	public String movieReg() {
@@ -53,24 +42,24 @@ public class ScreenManager_Controller {
 	
 	@RequestMapping("/screenManager/data_view.do")
 	public String regScreenOne(String DOCID, Model model) {
-		ScreenAllDataVo toTalDataVo = screenAllData.selectOne("F48331");
+		// F48331
 		// F41181
 		// F32196
 		
-		List<TheaterVo> theaterList = theaterDao.selectList(); 
-		model.addAttribute("theaterList", theaterList);
-		
-		model.addAttribute("scrRegInfoVo", toTalDataVo.getScrRegInfoVo());
-		model.addAttribute("scrVo", toTalDataVo.getScrVo());
-		model.addAttribute("scrTicketVo", toTalDataVo.getScrTicketVo());
-		model.addAttribute("theaterVo", toTalDataVo.getTheaterVo());
-		model.addAttribute("scrSeatVo", toTalDataVo.getScrSeatVo());
+		//List<String> screen_RegdataList = screen_RegdataDao.selectList_DOCID();
 		
 		return "screenManager/screen_data_view";
 	}
 	
+	@RequestMapping("/screenManager/insert_form.do")
+	public String movieInsertForm(String DOCID, Model model) throws IOException {
+		API_MovieDataVo API_vo = API_MovieData_DB.selectMovieOne(DOCID);
+		model.addAttribute("API_vo", API_vo);
+		return "screenManager/screen_insert_form"; 
+	}
+	
 	@RequestMapping("/screenManager/insert.do")
-	public String movieInsert() { // TODO 전달인자 및 메소드 튜닝.
+	public String movieInsert(String DOCID) { // TODO 전달인자 및 메소드 튜닝.
 		
 		//int res = regScreenDao.insert(vo);
 		

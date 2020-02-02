@@ -100,12 +100,7 @@
 						</c:forEach>
 					</td>
 					<td>
-					<form action="">
-						<input type="hidden" name="DOCID" value="${movie.DOCID}" />
-						<input type="hidden" name="reg_title" value="${ movie.title }" />
-						<input type="hidden" name="reg_price" value="10000" />
-						<input type="button" value="상영등록" onclick="insert(this.form)" />
-					</form>
+						<input type="button" value="상영등록" onclick="insert_form('${movie.DOCID}')" />
 					</td>
 				</tr>
 			</c:forEach>
@@ -113,10 +108,6 @@
 	
 </body>
 <script type="text/javascript">
-	function insert(form) {
-		form.reg_title.value = form.reg_title.value.trim();
-		form.action="insert.do";
-		form.submit();
-	}
+	function insert_form(DOCID) { location.href="insert_form.do?DOCID="+DOCID;}
 </script>
 </html>
