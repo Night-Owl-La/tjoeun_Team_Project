@@ -14,6 +14,5 @@
 	<mappers>
 		<mapper resource="config/mybatis/mapper/notice.xml" />
 		<mapper resource="config/mybatis/mapper/user.xml" />
-		<mapper resource="config/mybatis/mapper/screen_regdata.xml" />
 	</mappers>
 </configuration>

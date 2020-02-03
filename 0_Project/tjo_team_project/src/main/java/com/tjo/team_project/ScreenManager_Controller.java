@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import dao.Screen_RegdataDao;
 import util.API_MovieData_DB;
 import vo.API_MovieDataVo;
 
@@ -19,9 +18,6 @@ public class ScreenManager_Controller {
 	
 	@Autowired
 	HttpServletRequest request;
-	
-	@Autowired
-	Screen_RegdataDao screen_RegdataDao;
 	
 	@RequestMapping("/screenManager/search_form.do")
 	public String movieReg() {

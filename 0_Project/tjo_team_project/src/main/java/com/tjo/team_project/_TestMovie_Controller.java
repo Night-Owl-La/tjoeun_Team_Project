@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import dao.Screen_RegdataDao;
 import util.API_MovieData_DB;
 import vo.API_MovieDataVo;
 
@@ -21,14 +20,9 @@ public class _TestMovie_Controller {
 	HttpServletRequest request;
 	
 	@Autowired
-	Screen_RegdataDao screen_RegdataDao;
 
 	@RequestMapping("latest")
 	public String latest() {
-		List<String> list = screen_RegdataDao.selectList_DOCID();
-		for (String string : list) {
-			System.out.println(string);
-		}
 		return "";
 	}
 	
