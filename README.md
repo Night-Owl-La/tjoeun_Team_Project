@@ -31,4 +31,4 @@
 **Web Design** | Brackets 1.14.1
 **VCS** | Git/Github
 **VCS-GUI** | Github Desktop
-**OS** | Windows10, Ubuntu Desktop 19.10
+**OS** | Windows10, CentOS-8.1.1911-x86_64
