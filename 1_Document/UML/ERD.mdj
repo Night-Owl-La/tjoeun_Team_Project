@@ -2455,22 +2455,6 @@
 													"top": 562,
 													"width": 263.52783203125,
 													"height": 13
-												},
-												{
-													"_type": "ERDColumnView",
-													"_id": "AAAAAAFv8c9Wl+eULc0=",
-													"_parent": {
-														"$ref": "AAAAAAFv8cqCG+d6v4o="
-													},
-													"model": {
-														"$ref": "AAAAAAFv8c9WbeeRgvQ="
-													},
-													"fillColor": "#ffd8d8",
-													"font": "Arial;13;0",
-													"left": 372,
-													"top": 577,
-													"width": 263.52783203125,
-													"height": 13
 												}
 											],
 											"fillColor": "#ffd8d8",
@@ -2478,7 +2462,7 @@
 											"left": 367,
 											"top": 512,
 											"width": 273.52783203125,
-											"height": 83
+											"height": 68
 										}
 									],
 									"fillColor": "#ffd8d8",
@@ -2486,7 +2470,7 @@
 									"left": 367,
 									"top": 489,
 									"width": 273.52783203125,
-									"height": 106,
+									"height": 91,
 									"autoResize": true,
 									"nameLabel": {
 										"$ref": "AAAAAAFv8cqCG+d5Mrc="
@@ -2906,7 +2890,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 518,
-											"top": 658,
+											"top": 650,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -2923,7 +2907,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 519,
-											"top": 613,
+											"top": 598,
 											"height": 13,
 											"alpha": 0.5235987755982988,
 											"distance": 30,
@@ -2957,7 +2941,7 @@
 										"$ref": "AAAAAAFv8cqCG+d46Ns="
 									},
 									"lineStyle": 2,
-									"points": "504:594;504:736",
+									"points": "504:579;504:736",
 									"nameLabel": {
 										"$ref": "AAAAAAFwAUXx5QAJuBk="
 									},
@@ -4136,17 +4120,6 @@
 									},
 									"name": "상영관 구분 ㅡ 2D || 3D || 4D",
 									"documentation": "screen_classification",
-									"type": "INTEGER",
-									"length": 0
-								},
-								{
-									"_type": "ERDColumn",
-									"_id": "AAAAAAFv8c9WbeeRgvQ=",
-									"_parent": {
-										"$ref": "AAAAAAFv8cqCG+d2fhU="
-									},
-									"name": "상영관 좌석 총개수",
-									"documentation": "screen_seat_totalcount",
 									"type": "INTEGER",
 									"length": 0
 								}
