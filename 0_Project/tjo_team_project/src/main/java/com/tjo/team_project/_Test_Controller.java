@@ -10,19 +10,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import dao.ScreenDao;
 import util.API_MovieData_DB;
 import vo.API_MovieDataVo;
+import vo.Screen_FullDataVo;
 
 @Controller
-public class _TestMovie_Controller {
+public class _Test_Controller {
 	
 	@Autowired
 	HttpServletRequest request;
 	
 	@Autowired
+	ScreenDao screenDao;
 
+	// 이것저것 테스트
 	@RequestMapping("latest")
 	public String latest() {
+		List<Screen_FullDataVo> list = screenDao.selectList_FullData();
+		
+		for (Screen_FullDataVo screenAllVo : list) {
+			System.out.println(screenAllVo.toString());
+		}
+		
 		return "";
 	}
 	
