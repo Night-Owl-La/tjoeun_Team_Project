@@ -1,50 +1,67 @@
 package vo;
 
 public class TheaterVo {
-	int tht_idx;
-	String tht_name;
-	String tht_tel;
-	String tht_area;
-	String tht_location;
+	int theater_idx;
+	String theater_name;
+	String theater_tel;
+	String theater_area;
+	String theater_location;
+	String theater_opening_date;
+	String theater_closed_date;
 
-	public int getTht_idx() {
-		return tht_idx;
+	public int getTheater_idx() {
+		return theater_idx;
 	}
 
-	public void setTht_idx(int tht_idx) {
-		this.tht_idx = tht_idx;
+	public void setTheater_idx(int theater_idx) {
+		this.theater_idx = theater_idx;
 	}
 
-	public String getTht_name() {
-		return tht_name;
+	public String getTheater_name() {
+		return theater_name;
 	}
 
-	public void setTht_name(String tht_name) {
-		this.tht_name = tht_name;
+	public void setTheater_name(String theater_name) {
+		this.theater_name = theater_name;
 	}
 
-	public String getTht_tel() {
-		return tht_tel;
+	public String getTheater_tel() {
+		return theater_tel;
 	}
 
-	public void setTht_tel(String tht_tel) {
-		this.tht_tel = tht_tel;
+	public void setTheater_tel(String theater_tel) {
+		this.theater_tel = theater_tel;
 	}
 
-	public String getTht_area() {
-		return tht_area;
+	public String getTheater_area() {
+		return theater_area;
 	}
 
-	public void setTht_area(String tht_area) {
-		this.tht_area = tht_area;
+	public void setTheater_area(String theater_area) {
+		this.theater_area = theater_area;
 	}
 
-	public String getTht_location() {
-		return tht_location;
+	public String getTheater_location() {
+		return theater_location;
 	}
 
-	public void setTht_location(String tht_location) {
-		this.tht_location = tht_location;
+	public void setTheater_location(String theater_location) {
+		this.theater_location = theater_location;
 	}
 
+	public String getTheater_opening_date() {
+		return theater_opening_date;
+	}
+
+	public void setTheater_opening_date(String theater_opening_date) {
+		this.theater_opening_date = theater_opening_date;
+	}
+
+	public String getTheater_closed_date() {
+		return theater_closed_date;
+	}
+
+	public void setTheater_closed_date(String theater_closed_date) {
+		this.theater_closed_date = theater_closed_date;
+	}
 }
