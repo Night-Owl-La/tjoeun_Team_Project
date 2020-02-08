@@ -16,7 +16,7 @@ alter table screen_regdata add constraint fk_screen_regdata_screen_idx foreign k
 
 -- 3. sample data 삽입.
 --p_key / 강남 1상영관 / 영화 국제등록코드 / 겨울왕국2.
-insert into screen_regdata values(seq_screen_regdata_idx.nextVal, 1, 'F48331', '겨울왕국2' );
+insert into screen_regdata values(seq_screen_regdata_idx.nextVal, 1, 'F48331', '겨울왕국 2' );
 --p_key / 신촌 1상영관 / 영화 국제등록코드 / 겨울왕국의 무민.
 insert into screen_regdata values(seq_screen_regdata_idx.nextVal, 2, 'F41181', '겨울왕국의 무민' );
 --p_key / 홍대 1상영관 / 영화 국제등록코드 / 겨울왕국.
