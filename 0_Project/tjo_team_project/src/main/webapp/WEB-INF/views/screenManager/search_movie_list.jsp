@@ -24,7 +24,7 @@
 				<th>스텝 배역</th>
 				<th>기타역할</th>
 			</tr>
-			<c:forEach var="movie" items="${ list }">
+			<c:forEach var="movie" items="${ searchMovie_List }">
 				
 				<tr>
 					<td>${ movie.title }</td>
