@@ -7,8 +7,7 @@ create table screen
 	screen_idx int,
 	theater_idx int,
 	screen_id int not null,
-	screen_classification int not null,
-	screen_seat_totalcount int not null
+	screen_classification int not null
 );
 
 -- 2. 제약조건 추가.
@@ -48,17 +47,17 @@ begin
 end;
 
 -- 5. sample data 삽입.
---p_key / 강남점(1) / 1상영관 / 2D / 좌석 20개.
-insert into screen values(seq_screen_idx.nextVal, 1, 1, 2, 20);
---p_key / 신촌점(2) / 1상영관 / 3D / 좌석 20개.
-insert into screen values(seq_screen_idx.nextVal, 2, 1, 3, 20);
---p_key / 홍대점(3) / 1상영관 / 4D / 좌석 20개.
-insert into screen values(seq_screen_idx.nextVal, 3, 1, 4, 20);
+--p_key / 강남점(1) / 1상영관 / 2D
+insert into screen values(seq_screen_idx.nextVal, 1, 1, 2);
+--p_key / 신촌점(2) / 1상영관 / 3D
+insert into screen values(seq_screen_idx.nextVal, 2, 1, 3);
+--p_key / 홍대점(3) / 1상영관 / 4D
+insert into screen values(seq_screen_idx.nextVal, 3, 1, 4);
 
---p_key / 강남점(1) / 2상영관 / 2D / 좌석 20개.
-insert into screen values(seq_screen_idx.nextVal, 1, 2, 2, 20);
---p_key / 강남점(1) / 3상영관 / 3D / 좌석 20개.
-insert into screen values(seq_screen_idx.nextVal, 1, 3, 3, 20);
+--p_key / 강남점(1) / 2상영관 / 2D
+insert into screen values(seq_screen_idx.nextVal, 1, 2, 2);
+--p_key / 강남점(1) / 3상영관 / 3D
+insert into screen values(seq_screen_idx.nextVal, 1, 3, 3);
 
 -- 4. 적용.
 commit
