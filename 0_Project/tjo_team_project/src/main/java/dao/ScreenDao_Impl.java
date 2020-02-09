@@ -24,7 +24,7 @@ public class ScreenDao_Impl implements ScreenDao {
 
 	@Override
 	public List<ScreenVo> selectList_Screen(int theater_idx) {
-		return sqlSession.selectList("screen.list_Screen_theater_idx", theater_idx);
+		return sqlSession.selectList("screen.list_Screen_Theater_idx", theater_idx);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class ScreenDao_Impl implements ScreenDao {
 
 	@Override
 	public Screen_RegdataVo selectOne_Regdata(Screen_RegdataVo regdataVo) {
-		return sqlSession.selectOne("screen.One_Screen_Regdata_DOCID_SCREEN_IDX", regdataVo);
+		return sqlSession.selectOne("screen.One_Screen_Regdata_DOCID_Screen_idx", regdataVo);
 	}
 
 	@Override

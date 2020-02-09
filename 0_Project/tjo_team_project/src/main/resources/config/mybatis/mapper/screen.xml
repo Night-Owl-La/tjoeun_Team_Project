@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM SCREEN ORDER BY SCREEN_IDX
 	</select>
 	
-	<select id="list_Screen_theater_idx" resultType="vo.ScreenVo">
+	<select id="list_Screen_Theater_idx" resultType="vo.ScreenVo">
 		SELECT * FROM SCREEN WHERE THEATER_IDX = #{ THEATER_IDX }
 	</select>
 	
@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM SCREEN_REGDATA
 	</select>
 	
-	<select id="One_Screen_Regdata_DOCID_SCREEN_IDX" resultType="vo.Screen_RegdataVo">
+	<select id="One_Screen_Regdata_DOCID_Screen_idx" resultType="vo.Screen_RegdataVo">
 		SELECT * FROM SCREEN_REGDATA WHERE DOCID = #{DOCID} AND SCREEN_IDX = #{screen_idx}
 	</select>
 	
