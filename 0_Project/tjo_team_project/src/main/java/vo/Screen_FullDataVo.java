@@ -10,6 +10,8 @@ public class Screen_FullDataVo {
 	int screen_id;
 	int screen_classification;
 	int screen_seat_total_amount;
+	String screen_schedule_date;
+	String screen_schedule_time; 
 
 	public String getDOCID() {
 		return DOCID;
@@ -83,6 +85,22 @@ public class Screen_FullDataVo {
 		this.screen_seat_total_amount = screen_seat_total_amount;
 	}
 	
+	public String getScreen_schedule_date() {
+		return screen_schedule_date;
+	}
+
+	public void setScreen_schedule_date(String screen_schedule_date) {
+		this.screen_schedule_date = screen_schedule_date;
+	}
+
+	public String getScreen_schedule_time() {
+		return screen_schedule_time;
+	}
+
+	public void setScreen_schedule_time(String screen_schedule_time) {
+		this.screen_schedule_time = screen_schedule_time;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -103,6 +121,10 @@ public class Screen_FullDataVo {
 		sb.append(screen_classification);
 		sb.append("||");
 		sb.append(screen_seat_total_amount);
+		sb.append("||");
+		sb.append(screen_schedule_date);
+		sb.append("||");
+		sb.append(screen_schedule_time);
 
 		return sb.toString();
 	}
