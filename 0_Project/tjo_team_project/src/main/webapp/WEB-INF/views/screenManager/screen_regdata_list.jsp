@@ -23,6 +23,8 @@
 		<th>상영관 번호</th>
 		<th>상영관 구분</th>
 		<th>좌석 개수</th>
+		<th>상영시작 날짜</th>
+		<th>상영시작 시간</th>
 	</tr>
 	<c:forEach var="data" items="${ screen_FullData_List }">
 		<tr>
@@ -35,6 +37,8 @@
 			<td>${ data.screen_id }관</td>
 			<td>${ data.screen_classification }D</td>
 			<td>${ data.screen_seat_total_amount }</td>
+			<td>${ data.screen_schedule_date }</td>
+			<td>${ data.screen_schedule_time }</td>
 		</tr>
 	</c:forEach>
 	
