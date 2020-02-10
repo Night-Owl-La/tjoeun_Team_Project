@@ -8,55 +8,58 @@
 </head>
 <body>
 	<%@include file="../customer_fixed.jsp" %>
-	<main id="wrap_main">
-
+	<main id="main-wrap">
 		<!-- inner_wrap main -->
-		<div class="inner_wrap_main">
+		<div class="main-wrap_inner-wrap">
+		
 			<!-- content -->
-			<section id="content">
-				<article class="menu_content">
-					<!-- 고객 서비스 -->
-					<div class="item_content">
-						<div class="header_table">
-							<h2>
-								<span class="title_header_table">Notice</span>
-							</h2>
-							<span class="search_bar"> 
-								<select name="search_option" class="search_option">
-									<option value="all">전체</option>
-									<option value="title">제목</option>
-									<option value="category">구분</option>
-								</select>
-								<input type="text" class="search_text"> 
-								<input type="button" value="검색" class="search_btn">
-							</span>
-						</div>
-						<form action="notice_delete.do">
-							<input type="hidden" name="selectPage" value="${ param.selectPage }" />
-							<input type="hidden" name="page" value="${ param.page }" />
-							<input type="hidden" name="notice_idx" value="${ noticeVo.notice_idx }">
-							<!-- table -->
-							<div class="view_item_content">
-								<div class="header_view_item_content">
-							        <div class="title_view_item_content">
-							            ${ noticeVo.notice_title }
-							        </div>
-							        <div class="flex_info_view_itme_content">
-							            <span class="author_view_item_content">${ noticeVo.notice_author }</span>
-							            <span class="regdate_view_item_content">${ noticeVo.notice_regdate }</span>
-							            <span class="viewcount_view_item_content">${ noticeVo.notice_view_count }</span>
-							        </div>
-						        </div>
-						        <div class="content_item">
-						        	${ noticeVo.notice_content }
-						        </div>
-						    </div>
-							<div class="bottom_table">
-								<input type="button" value="수정" onclick="notice_update(this.form);"/>
-								<input type="button" value="삭제" onclick="notice_delete(this.form);"/>
+			<section>
+				<article>
+					<div id="main-wrap_content">
+						<!-- 고객 서비스 -->
+						<div class="content_board">
+							<div class="content_board_top">
+								<h2>
+									<span class="content_board_top_title">Notice</span>
+								</h2>
+								<span class="content_board_top_search-bar"> 
+									<select name="search_option" class="content_board_top_search-bar_search-option">
+										<option value="all">전체</option>
+										<option value="title">제목</option>
+										<option value="category">구분</option>
+									</select>
+									<input type="text" class="content_board_top_search-bar_search-text"> 
+									<input type="button" value="검색" class="content_board_top_search-bar_search-btn">
+								</span>
 							</div>
-						</form>
-						
+							<form action="notice_delete.do">
+								<input type="hidden" name="selectPage" value="${ param.selectPage }" />
+								<input type="hidden" name="page" value="${ param.page }" />
+								<input type="hidden" name="notice_idx" value="${ noticeVo.notice_idx }">
+								<!-- table -->
+								<div class="content_board_main">
+									<div class="content_board_main_subject-area">
+								        <div class="content_board_main_subject-area_title">
+								            ${ noticeVo.notice_title }
+								        </div>
+								        <div class="content_board_main_subject-area_about-author">
+								            <span class="content_board_main_subject-area_about-author_author">${ noticeVo.notice_author }</span>
+								            <span class="content_board_main_subject-area_about-author_regdate">${ noticeVo.notice_regdate }</span>
+								            <span class="content_board_main_subject-area_about-author_view-count">${ noticeVo.notice_view_count }</span>
+								        </div>
+							        </div>
+							        <div class="content_board_main_content">
+								        <div class="content_board_main_content_item">
+								        	${ noticeVo.notice_content }
+								        </div>
+							        </div>
+							    </div>
+								<div class="content_board_bottom">
+									<input type="button" class="common_btn" value="수정" onclick="notice_update(this.form);"/>
+									<input type="button" class="common_btn" value="삭제" onclick="notice_delete(this.form);"/>
+								</div>
+							</form>
+						</div>
 					</div>
 				</article>
 			</section>
