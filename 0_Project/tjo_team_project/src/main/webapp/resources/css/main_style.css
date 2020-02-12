@@ -1,0 +1,794 @@
+@charset "UTF-8";
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+
+.mom{
+	
+	background-color: #242424;
+	
+	
+	
+	
+}
+
+
+.nav{
+
+}
+
+
+.video{
+	
+	width: 1280px;
+	
+	height: auto;
+	
+	margin-left: 300px;
+	
+}
+
+@media ( max-width: 1280px ) {
+		
+	.video{
+	
+		width: 720px;
+		
+		height: auto;
+		
+		margin-left: 260px;
+			
+	}
+	
+}
+
+
+.L_side {
+	
+	width: 320px;
+	
+	height: 900px;
+	
+	float: left;
+
+}
+
+.R_side {
+	
+	width: 320px;
+	
+	height: 900px;
+	
+	float: right;
+	
+	
+}
+
+
+/* 포스터 시작 */
+
+.poster{
+	
+	color: white;
+	
+}
+
+
+#poster-big1{
+	
+	width: 600px;
+	
+	height: 900px;
+}
+
+#poster-small1{
+	
+	width: 300px;
+	
+	height: 450px;
+}
+#poster-small2{
+	
+	width: 300px;
+	
+	height: 450px;
+}
+#poster-small3{
+	
+	width: 300px;
+	
+	height: 450px;
+}
+#poster-small4{
+	
+	width: 300px;
+	
+	height: 450px;
+}
+
+
+
+.pic {
+	
+    max-width: 600px;
+    max-height: 900px;
+    position: relative;
+    overflow: hidden;
+    margin: 5px;
+    float: left;
+    -webkit-animation: anima 2s;
+    -moz-animation: anima 2s;
+    -o-animation: anima 2s;
+    -ms-animation: anima 2s;
+    animation: anima 2s;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+
+}
+
+.pic-3d {
+	
+    -webkit-perspective: 500;
+    -moz-perspective: 500;
+    -o-perspective: 500;
+    -ms-perspective: 500;
+    perspective: 500;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.pic-caption {
+	
+    cursor: default;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(36, 36, 36, 0.92);
+    padding: 10px;
+    text-align: center;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}
+
+.pic-image {
+	
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.pic:hover .pic-image {
+	
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.pic-title {
+	
+    font-size: 1.8em
+}
+
+a,
+a:hover,
+.pic .pic-image,
+.pic-caption,
+.pic:hover .pic-caption,
+.pic:hover img {
+	
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    
+    text-decoration: none;
+}
+
+.pic:hover .bottom-to-top{
+	
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -moz-touch-callout: none;
+    -o-touch-callout: none;
+    -ms-touch-callout: none;
+    touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    -o-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+}
+
+.bottom-to-top {
+	
+    top: 50%;
+    left: 0;
+}
+
+.pic:hover .bottom-to-top {
+	
+    top: 0;
+    left: 0;
+}
+
+a.poster-btn{
+	
+	border: 3px solid #8dff95;
+	
+	background-color: #8dff95;
+	
+	border-radius: 10px;
+	
+	color: #242424;
+	
+	margin: auto;
+	
+	text-decoration: none;
+	
+}
+
+a.poster-btn:hover {
+	
+	cursor:pointer;
+	
+	text-decoration: none;
+	
+    color: #ffffff;
+    
+	
+}
+
+@media ( max-width: 1280px ) {
+        .pic{
+        
+        	float: none;
+        	
+        }
+        
+        .L_side {
+	
+			width: 320px;
+			
+			height: 4500px;
+			
+			float: left;
+			
+		
+		}
+		
+        
+		.R_side {
+	
+			width: 0px;
+			
+			height: 0px;
+			
+			display: none;
+			
+			
+			
+		}
+		
+		
+		#poster-big1{
+	
+			width: 600px;
+			
+			height: 900px;
+		}
+		
+		#poster-small1{
+			
+			width: 600px;
+			
+			height: 900px;
+		}
+		#poster-small2{
+			
+			width: 600px;
+			
+			height: 900px;
+		}
+		#poster-small3{
+			
+			width: 600px;
+			
+			height: 900px;
+		}
+		#poster-small4{
+			
+			width: 600px;
+			
+			height: 900px;
+		}
+		
+		
+      }
+
+/* 포스터 끝 */
+
+/* 트레일러 시작 */
+
+.trailer{
+	
+	width: 1280px;
+	
+	margin: auto;
+}
+
+.trailer-word{
+	
+	color: white;
+	
+	/* font-size: 50px; */
+	
+	align: left;
+}
+
+.trailer-videos{
+	
+	align: center;
+}
+
+.trailer-float{
+	float: left;
+}
+
+#trailer1{
+	
+	width: 300px;
+	
+	margin: 10px;
+}
+
+#trailer2{
+	
+	width: 300px;
+	
+	margin: 10px;
+}
+
+#trailer3{
+	
+	width: 300px;
+	
+	margin: 10px;
+}
+
+#trailer4{
+	
+	width: 300px;
+	
+	margin: 10px;
+}
+
+@media ( max-width: 1280px ) {
+	
+	.trailer{
+	
+		margin-left: 300px;
+	
+	}
+	
+	.trailer-float{
+		
+		float: none;
+	
+	}
+	
+	#trailer1{
+	
+		width: 600px;
+		
+		height: 300px;
+		
+		margin: 10px;
+	}
+		
+	#trailer2{
+		
+		width: 600px;
+	
+		height: 300px;
+		
+		margin: 10px;
+	}
+	
+	#trailer3{
+		
+		width: 600px;
+	
+		height: 300px;
+		
+		margin: 10px;
+	}
+	
+	#trailer4{
+		
+		width: 600px;
+	
+		height: 300px;
+		
+		margin: 10px;
+	}
+
+	
+	
+	}
+
+
+/* 트레일러 끝 */
+
+/* 리뷰 시작 */
+
+
+/* =========================
+          Review
+==========================*/
+
+.review{
+	
+	color: white;
+	
+}
+
+.blog-font{
+    
+    color: white;
+    
+    margin: 100px;
+}
+
+#blog-left{
+	width: 400px;
+	
+	height: auto;
+	
+	float: left;
+	
+	margin-left: 300px;
+	
+	margin-right: 40px;
+}
+
+#blog-left p {
+    margin: 25px 0;
+}
+
+#blog-btn a {
+    margin: 0;
+}
+
+
+.btn-yellow {
+    
+    background: #8eff95;
+    
+    color: #242424;
+    
+}
+
+a.btn btn-general btn-yellow:hover{
+	
+	color: white;
+	
+}
+
+.blog-post {
+	
+    background: #3f3f3f;
+    
+    padding: 20px; 
+    
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.1); 
+    
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    
+    border-radius: 6px;
+    
+    width: 400px;
+    
+    height: auto;
+    
+    float: left;
+    
+    margin: 10px;
+    
+}
+
+.blog-post h1 {
+	
+    line-height: 40px;
+    margin: 0;
+    
+}
+
+.blog-post > p {
+	
+    line-height: 24px;
+    margin: 0;
+    font-weight: 300;
+    
+}
+
+.blog-post a {
+	
+    display: inline-block;
+    margin-top: 25px;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #8eff95;
+    -webkit-transition: all 400ms linear;
+    transition: all 400ms linear;
+    
+}
+
+.blog-post a:hover {
+	
+    color: #ffffff;
+    
+}
+
+.blog-post .post-meta {
+	
+    border-top: 1px solid #c0c0c0;
+    margin-top: 30px;
+    padding-top: 10px;
+    
+}
+
+.blog-post .post-meta{
+	
+  font-size: 12px;
+    font-family: "Raleway", sans-serif;
+    line-height: 24px;
+    font-weight: 500;
+    margin: 0;
+    
+}
+
+.vertical-heading h5 {
+	
+    color: #f4c613;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    word-spacing: 9px;
+    display: inline-block;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    position: relative;
+    top: 60px;
+    left: -53px;
+    
+}
+
+.img-circle{
+	
+	width: 50px;
+	
+	height: auto;
+	
+}
+
+@media ( max-width: 1280px ) {
+	
+	#blog-left{
+	
+		float: none;
+		
+		width: 600px;
+		
+		height: auto;
+	
+	}
+	
+	.blog-post{
+	
+		float: none;
+		
+		margin-left: 300px;
+		
+		width: 600px;
+		
+		height: auto;
+	
+	}
+	
+	
+}
+
+
+/* 리뷰 끝 */
+
+/* 구독 시작 */
+
+.sub-img {
+	
+	clear: both;
+	
+	background-image: url("../images/taxitaxitaxi.jpg");
+	
+	background-repeat: no-repeat;
+	
+	background-size: 100%;
+	
+	height: 475px;
+	
+	opacity: 0.5;
+	
+}
+
+.sub-img:hover{
+	
+	opacity: 1.0;
+	
+}
+
+.sub-content {
+	
+	text-align: center;
+	
+	padding-top: 200px;
+	
+}
+
+
+h1.sub-title{
+	
+	text-shadow: black 0.2em 0.2em 0.2em;
+	
+	color: white;
+	
+    text-align: center;
+}
+
+p.sub-word{
+	
+	text-shadow: black 0.2em 0.2em 0.2em;
+	
+	color: white;
+	
+    text-align: center;
+}
+.sub-btn-center{
+	
+	text-align: center;
+}
+
+a.sub-btn{
+	
+	border: 3px solid #8dff95;
+	
+	background-color: #8dff95;
+	
+	border-radius: 10px;
+	
+	margin: auto;
+	
+	text-decoration: none;
+}
+
+a.sub-btn:hover {
+	
+	cursor:pointer;
+	
+	text-decoration: none;
+	
+    color: white;
+    
+	
+}
+
+@media ( max-width: 1280px ) {
+	
+	.sub-img {
+	
+		width: 1280px;
+		
+	}
+	
+	.sub-content {
+	
+		padding-top: 100px;
+	
+	}
+	
+}
+/* 구독 끝 */
+
+/* 푸터 시작 */
+
+.footer{
+	
+	width: 100%;
+	
+}
+
+.footer_logo{
+	
+	width:420px;
+
+	height: 280px;
+	
+	float: left;
+	
+	margin-left: 300px;
+}
+
+#logo{
+	
+	width: 300px;
+	
+	height: 300px;
+	
+	display: block;
+	
+	margin: auto;
+}
+
+.footer_content1{
+	
+	width:500px;
+	
+	height: 280px;
+	 
+	float:left;
+	
+	padding-top: 110px;
+}
+
+#footer_word{
+	
+	color: white;
+	
+	text-align: center;
+	
+}
+
+.footer_content2{
+	
+	width:350px;
+	
+	height: 280px;
+	
+	float:left;
+}
+
+@media ( max-width: 1280px ) {
+	
+	.footer_logo{
+		
+		margin-left: 150px;
+		
+	}
+	
+}
+/* 푸터 끝 */
+
