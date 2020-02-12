@@ -10,36 +10,13 @@ import vo.TheaterVo;
 
 @Repository("theaterDao")
 public class TheaterDao_Impl implements TheaterDao {
-
+	
 	@Autowired
 	SqlSession sqlSession;
-	
+
 	@Override
 	public List<TheaterVo> selectList() {
-		return sqlSession.selectList("theater.theater_List");
-	}
-
-	@Override
-	public TheaterVo selectOne_ThtIdx(int tht_idx) {
-		return sqlSession.selectOne("theater.theater_One_tht_idx", tht_idx);
-	}
-
-	@Override
-	public int insert(TheaterVo vo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int update(TheaterVo vo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int delete(int tht_idx) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.selectList("theater.theaterList_All");
 	}
 
 }

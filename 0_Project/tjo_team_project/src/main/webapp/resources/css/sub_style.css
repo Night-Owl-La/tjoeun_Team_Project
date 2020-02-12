@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+.mom{
+
+	width:1890px;
+	
+	background-color: #242424;
+	
+	color: white;
+
+}
+
+.header{
+	
+	width: 1890px;
+	
+	height: 150px;
+	
+	padding-top: 250px;
+}
+
+h1.header_text{
+	
+	text-shadow: black 0.2em 0.2em 0.2em;
+	
+	color: white;
+	
+    text-align: center;
+	
+}
+
+/* 중앙 시작 */
+
+.side_left{
+	
+	width: 33%;
+	
+	height: 600px;
+	
+	float: left;
+	
+}
+
+/* 메인 시작 */
+
+.main{
+	
+	width: 33%;
+	
+	height: 600px;
+	
+	float: left;
+}
+
+
+.main_box{
+	
+	align-self: center;
+	
+}
+
+.main_name{
+	
+	text-shadow: black 0.2em 0.2em 0.2em;
+	
+	color: white;
+	
+	text-align: center;
+}
+
+.main_email{
+	
+	text-shadow: black 0.2em 0.2em 0.2em;
+	
+	color: white;
+	
+	text-align: center;
+}
+
+.main_btn_align{
+	
+	text-align: center;
+	
+}
+
+.main_btn{
+
+	border: 3px solid #8dff95;
+	
+	background-color: #8dff95;
+	
+	border-radius: 10px;
+	
+	color: #242424;
+	
+	text-decoration: none;
+	
+}	
+
+/* 메인 끝 */
+
+
+
+/* 푸터 시작 */
+
+.footer{
+	
+	width: 100%;
+	
+}
+
+.footer_logo{
+	
+	width:420px;
+
+	height: 280px;
+	
+	float: left;
+	
+	margin-left: 300px;
+}
+
+#logo{
+	
+	width: 300px;
+	
+	height: 300px;
+	
+	display: block;
+	
+	margin: auto;
+}
+
+.footer_content1{
+	
+	width:500px;
+	
+	height: 280px;
+	 
+	float:left;
+	
+	padding-top: 110px;
+}
+
+#footer_word{
+	
+	color: white;
+	
+	text-align: center;
+	
+}
+
+.footer_content2{
+	
+	width:350px;
+	
+	height: 280px;
+	
+	float:left;
+}
+/* 푸터 끝 */
+
+
+

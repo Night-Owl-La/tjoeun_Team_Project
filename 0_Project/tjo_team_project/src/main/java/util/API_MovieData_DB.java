@@ -182,7 +182,10 @@ public class API_MovieData_DB {
 
 		// 결과값이 파싱될 Vo 객체를 담는 리스트.
 		List<API_MovieDataVo> movieList = new ArrayList<API_MovieDataVo>();
-
+		
+		// 검색 결과가 없는 경우 빈 리스트 리턴.
+		if(resultArray == null) return movieList;
+		
 		// 파싱.
 		for (Object resultObject : resultArray) {
 
@@ -217,6 +220,7 @@ public class API_MovieData_DB {
 	private static API_MovieDataVo dataFiltering(API_MovieDataVo movieVo) {
 		// -- 제목 파싱. --
 		String re_Title = movieVo.getTitle().replace("!HS ", "").replace(" !HE ", "");
+		if(re_Title.indexOf(" ") == 0) re_Title = re_Title.replaceFirst(" ", "");
 		movieVo.setTitle(re_Title);
 
 		// -- 관람등급 파싱. --

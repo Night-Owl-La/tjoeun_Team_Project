@@ -1,7 +1,7 @@
-/*
+
   
 --일련번호 관리 객체
- create sequence seq_user_idx
+ create sequence seq_user_idx;
  
  create table user_info
  (
@@ -85,6 +85,3 @@ alter table user_info
  select * from user_info
  
  commit
-   
-     
- */

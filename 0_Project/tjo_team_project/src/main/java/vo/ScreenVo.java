@@ -1,50 +1,40 @@
 package vo;
 
 public class ScreenVo {
-	int scr_idx;
-	int scr_id;
-	int scr_seat_count;
-	int tht_idx;
-	String DOCID;
+	int screen_idx;
+	int theater_idx;
+	int screen_id;
+	int screen_classification;
 
-	public int getScr_idx() {
-		return scr_idx;
+	public int getScreen_idx() {
+		return screen_idx;
 	}
 
-	public void setScr_idx(int scr_idx) {
-		this.scr_idx = scr_idx;
+	public void setScreen_idx(int screen_idx) {
+		this.screen_idx = screen_idx;
 	}
 
-	public int getScr_id() {
-		return scr_id;
+	public int getTheater_idx() {
+		return theater_idx;
 	}
 
-	public void setScr_id(int scr_id) {
-		this.scr_id = scr_id;
+	public void setTheater_idx(int theater_idx) {
+		this.theater_idx = theater_idx;
 	}
 
-	public int getScr_seat_count() {
-		return scr_seat_count;
+	public int getScreen_id() {
+		return screen_id;
 	}
 
-	public void setScr_seat_count(int scr_seat_count) {
-		this.scr_seat_count = scr_seat_count;
+	public void setScreen_id(int screen_id) {
+		this.screen_id = screen_id;
 	}
 
-	public int getTht_idx() {
-		return tht_idx;
+	public int getScreen_classification() {
+		return screen_classification;
 	}
 
-	public void setTht_idx(int tht_idx) {
-		this.tht_idx = tht_idx;
+	public void setScreen_classification(int screen_classification) {
+		this.screen_classification = screen_classification;
 	}
-
-	public String getDOCID() {
-		return DOCID;
-	}
-
-	public void setDOCID(String dOCID) {
-		DOCID = dOCID;
-	}
-
 }

@@ -24,12 +24,13 @@
 		<!-- header -->
 		<header id="header">
 			<!-- <h1 hidden>공지사항</h1> -->
-			<div class="inner_header">
+			<div class="header_inner-header">
 				<!-- 네비게이션 바 -->
-				<div id="navigation_Bar">
-					<a href="#"><img
-						src="${ pageContext.request.contextPath }/resources/images/customer_center_images/logo.png"
-						alt="Logo"></a> <span>Navigation Bar</span>
+				<div class="header_inner-header_navigation-bar">
+					<a href="#">
+						<img src="${ pageContext.request.contextPath }/resources/images/customer_center_images/logo.png" alt="Logo">
+					</a>
+					<span>Navigation Bar</span>
 					<nav>
 						<ul class="clearfix">
 							<li>목록</li>
@@ -44,31 +45,36 @@
 		</header>
 		
 		<!-- title header main-->
-		<div class="title_header_main">
-			<a href="${ pageContext.request.contextPath }/customer_center/customer_main.do"> <span class="image_title_header_main"></span></a>
+		<div class="wrap_logo-area">
+			<a href="${ pageContext.request.contextPath }/customer_center/customer_main.do">
+				<span class="wrap_logo-area_image"></span>
+			</a>
 		</div>
 
 		<!-- nav -->
 		<nav id="nav">
-			<div class="title_menu_nav">
-				<span class="text_title_menu_nav">Service</span>
+			<div class="nav_title-area">
+				<span class="nav_title-area_title">Service</span>
 			</div>
-			<div class="menu_nav">
-				<ul class="list_menu_nav">
-					<li class="link_list_menu_nav"><a href="#"
+			<div class="nav_menu-area">
+				<ul class="nav_menu-area_list">
+					<li class="nav_menu-area_list_item"><a href="#"
 						onclick="sendNotice('first');">Notice</a></li>
-					<li class="link_list_menu_nav"><a href="#">FAQ</a></li>
+					<li class="nav_menu-area_list_item"><a href="#">FAQ</a></li>
 					<!-- TODO 1:1문의 로그인 체크 -->
-					<li class="link_list_menu_nav"><a href="#">1:1문의</a></li>
+					<li class="nav_menu-area_list_item"><a href="#">1:1문의</a></li>
 				</ul>
 			</div>
 		</nav>
 		
-		<div id=disp></div>
+		<!-- right side -->
+		<div id="wrap_right-border"></div>
+		
+		<div id="wrap_main-content"></div>
 
 		<!-- footer -->
 		<footer id="footer">
-			<span class="text_footer">footer</span>
+			<span class="footer_text">footer</span>
 		</footer>
 	</div>
 
@@ -93,7 +99,7 @@ function sendNotice(select) {
 					"search_text": '${ param.search_text }'
 			},
 			success: function(res_data) {
-				$('#disp').html(res_data);
+				$('#wrap_main-content').html(res_data);
 			},
 			error: function(error) {
 				alert(error);

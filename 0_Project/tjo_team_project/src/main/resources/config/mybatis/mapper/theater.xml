@@ -3,18 +3,9 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="theater">
-	<select id="theater_List" resultType="vo.TheaterVo">
-		select * from theater
+	<select id="theaterList_All" resultType="vo.TheaterVo">
+		SELECT * FROM THEATER ORDER BY THEATER_IDX
 	</select>
-	
-	<select id="theater_One_tht_idx" parameterType="int" resultType="vo.TheaterVo">
-		select * from theater where tht_idx = #{ tht_idx }
-	</select>
-	
-	<insert id="theater_Insert" parameterType="vo.TheaterVo">
-		insert into theater values(seq_theater_idx.nextVal, #{ tht_name }, #{ tht_tel }, #{ tht_area }, #{ tht_location })
-	</insert>
-	
 	
 </mapper>
 

@@ -17,18 +17,9 @@
 
 }
 
-/* .banner{
-	
-	width:1280px;
-	
-	margin: auto;
-} */
-
 .video{
 
-	max-width:1280px;
-	
-	width: 1280%;
+	width: 1280px;
 	
 	height: auto;
 	
@@ -40,11 +31,11 @@
 	
 	.video{
 
-		width: 600px;
+		width: 150px;
 		
 		height: auto;
 		
-		margin: auto;
+		margin-left: 300px;
 		
 		}
 	
@@ -268,6 +259,14 @@ a.poster-btn{
 			height: 4500px;
 			
 			float: left;
+		
+		}
+		
+		.R_side {
+		
+			width: 0%;
+			
+			height: 0%;
 		
 		}
 		
@@ -568,37 +567,39 @@ a.poster-btn{
 /* 리뷰 끝 */
 
 /* 구독 시작 */
-.sub{
-	
-	/* position: relative;
-	 */
-}
 
-.sub-img{
+.sub-img {
 	
-	width: 100%;
+	clear: both;
 	
-	height: auto;
+	background-image: url("../images/taxitaxitaxi.jpg");
 	
-	background-image: url("${ pageContext.request.contextPath }/resources/images/taxitaxitaxi.jpg");
+	background-repeat: no-repeat;
 	
-	webkit-filter:blur(3px);
-	moz-filter:blur(3px);
-	o-filter:blur(3px);
-	ms-filter:blur(3px);
-	filter:blur(3px);
+	background-size: 100%;
+	
+	
+	
+	height: 475px;
+	
+	opacity: 0.5;
 	
 }
 
-.sub-position{
-	position: absolute;
+.sub-img:hover{
 	
-	top: 75%;
+	opacity: 1.0;
 	
-	left: 50%;
-	
-	transform: translate( -50%, -50% );
 }
+
+.sub-content {
+	
+	text-align: center;
+	
+	padding-top: 200px;
+	
+}
+
 
 h1.sub-title{
 	
@@ -636,6 +637,12 @@ a.sub-btn{
 	
 	margin: auto;
 }
+
+
+
+
+
+
 /* 구독 끝 */
 
 /* 푸터 시작 */

@@ -10,14 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import dao.ScreenTicketDao;
-import dao.TheaterDao;
-import service.ScreenAllData;
+import dao.ScreenDao;
 import util.API_MovieData_DB;
 import vo.API_MovieDataVo;
-import vo.ScreenAllDataVo;
-import vo.ScreenTicketVo;
-import vo.TheaterVo;
+import vo.Screen_FullDataVo;
+import vo.Screen_RegdataVo;
+import vo.Screen_ScheduleVo;
 
 @Controller
 public class ScreenManager_Controller {
@@ -26,56 +24,50 @@ public class ScreenManager_Controller {
 	HttpServletRequest request;
 	
 	@Autowired
-	ScreenAllData screenAllData;
+	ScreenDao screenDao;
 	
-	@Autowired
-	TheaterDao theaterDao;
-	
-	@Autowired
-	ScreenTicketDao screenTicketDao;
+	// #### 영화 검색 #### 
 	
 	@RequestMapping("/screenManager/search_form.do")
-	public String movieReg() {
-		return "screenManager/search_movie_form";
-	}
+	public String searchMovie_Form() { return "screenManager/search_movie_form"; }
 	
 	@RequestMapping("/screenManager/search_list.do")
-	public String movieListAll(Model model) throws IOException {
-		String search_Key = request.getParameter("search_Key");
-		String search_Value = request.getParameter("search_Value");
+	public String searchMovie_List(String search_Key, String search_Value, Model model) throws IOException {
+		List<API_MovieDataVo> searchMovie_List = API_MovieData_DB.searchMovieList(search_Key, search_Value);
 		
-		List<API_MovieDataVo> list = API_MovieData_DB.searchMovieList(search_Key, search_Value);
-		
-		model.addAttribute("list", list);
-		
+		model.addAttribute("searchMovie_List", searchMovie_List);
 		return "screenManager/search_movie_list";
 	}
 	
-	@RequestMapping("/screenManager/data_view.do")
-	public String regScreenOne(String DOCID, Model model) {
-		ScreenAllDataVo toTalDataVo = screenAllData.selectOne("F48331");
-		// F41181
-		// F32196
-		
-		List<TheaterVo> theaterList = theaterDao.selectList(); 
-		model.addAttribute("theaterList", theaterList);
-		
-		model.addAttribute("scrRegInfoVo", toTalDataVo.getScrRegInfoVo());
-		model.addAttribute("scrVo", toTalDataVo.getScrVo());
-		model.addAttribute("scrTicketVo", toTalDataVo.getScrTicketVo());
-		model.addAttribute("theaterVo", toTalDataVo.getTheaterVo());
-		model.addAttribute("scrSeatVo", toTalDataVo.getScrSeatVo());
-		
-		return "screenManager/screen_data_view";
+	// #### 영화 등록 ####
+	
+	@RequestMapping("/screenManager/insert_form.do")
+	public String movieInsert_Form(String DOCID, Model model) throws IOException {
+		API_MovieDataVo API_Vo = API_MovieData_DB.selectMovieOne(DOCID);
+		model.addAttribute("API_Vo", API_Vo);
+		return "screenManager/screen_insert_form"; 
 	}
 	
 	@RequestMapping("/screenManager/insert.do")
-	public String movieInsert() { // TODO 전달인자 및 메소드 튜닝.
+	public String movieInsert(Screen_RegdataVo regdataVo, Screen_ScheduleVo scheduleVo) {
 		
-		//int res = regScreenDao.insert(vo);
+		// 등록된 영화 중복체크.
+		if(screenDao.selectOne_Regdata(regdataVo) == null) { screenDao.insert_Regdata(regdataVo); }
 		
-		return "redirect:/screenManager/data_view.do";
+		regdataVo = screenDao.selectOne_Regdata(regdataVo);
+		scheduleVo.setScreen_regdata_idx(regdataVo.getScreen_regdata_idx());
+		screenDao.insert_Schedule(scheduleVo);
+		
+		return "redirect:/screenManager/screenRegdata_list.do";
 	}
-
+	
+	// #### 등록된 영화 상영정보 ####
+	
+	@RequestMapping("/screenManager/screenRegdata_list.do")
+	public String regScreenList(Model model) {
+		List<Screen_FullDataVo> screen_FullData_List = screenDao.selectList_FullData();
+		model.addAttribute("screen_FullData_List", screen_FullData_List);
+		return "screenManager/screen_regdata_list";
+	}
 
 }

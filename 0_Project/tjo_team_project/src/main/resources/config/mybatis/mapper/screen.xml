@@ -3,23 +3,59 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="screen">
-	<select id="screen_List" resultType="vo.ScreenVo">
-		select * from screen
+
+	<!-- 상영관 -->
+	<select id="list_Screen" resultType="vo.ScreenVo">
+		SELECT * FROM SCREEN ORDER BY SCREEN_IDX
 	</select>
 	
-	<select id="screen_One_scr_idx" parameterType="int" resultType="vo.ScreenVo">
-		select * from screen where scr_idx = #{ scr_idx }
+	<select id="list_Screen_Theater_idx" resultType="vo.ScreenVo">
+		SELECT * FROM SCREEN WHERE THEATER_IDX = #{ THEATER_IDX }
 	</select>
 	
-	<select id="screen_One_tht_idx" parameterType="int" resultType="vo.ScreenVo">
-		select * from screen where tht_idx = #{ tht_idx }
+	<!-- 상영영화 등록정보 -->
+	<select id="list_Screen_Regdata" resultType="vo.Screen_RegdataVo">
+		SELECT * FROM SCREEN_REGDATA
 	</select>
 	
-	<select id="screen_One_DOCID" parameterType="String" resultType="vo.ScreenVo">
-		select * from screen where docid = #{ DOCID }
+	<select id="One_Screen_Regdata_DOCID_Screen_idx" resultType="vo.Screen_RegdataVo">
+		SELECT * FROM SCREEN_REGDATA WHERE DOCID = #{DOCID} AND SCREEN_IDX = #{screen_idx}
 	</select>
 	
+	<insert id="insert_Screen_Regdata" parameterType="vo.Screen_RegdataVo">
+		INSERT INTO SCREEN_REGDATA VALUES(SEQ_SCREEN_REGDATA_IDX.NEXTVAL, #{screen_idx}, #{DOCID}, #{screen_regdata_movietitle})
+	</insert>
+	
+	<!-- 상영 일정 -->
+	<insert id="insert_Screen_Schedule" parameterType="vo.Screen_ScheduleVo">
+		INSERT INTO SCREEN_SCHEDULE VALUES(SEQ_SCREEN_SCHEDULE_IDX.NEXTVAL, #{screen_regdata_idx}, #{screen_schedule_date}, #{screen_schedule_time})
+	</insert>
+	
+	<!-- 쿼리 -->
+	<!-- 모든 영화관에 등록된 영화 상영정보 가져오기 -->
+	<select id="list_Screen_FullData" resultType="vo.Screen_FullDataVo">
+		select 
+		    docid,
+		    screen_regdata_movietitle, 
+		    theater_name,
+		    theater_tel,
+		    theater_area,
+		    theater_location,
+		    screen_id,
+		    screen_classification,
+		    screen_seat_total_amount,
+		    screen_schedule_date,
+		    screen_schedule_time
+		from 
+		    screen s inner join theater t on s.theater_idx = t.theater_idx
+		    inner join screen_regdata sr on sr.screen_idx = s.screen_idx
+		    inner join screen_schedule sc on sr.screen_regdata_idx = sc.screen_regdata_idx
+		    inner join 
+		        (select screen.screen_idx, count(*) screen_seat_total_amount 
+		        from screen_seat inner join screen on screen_seat.screen_idx = screen.screen_idx
+		        GROUP BY screen.screen_idx) ss 
+		    on ss.screen_idx = s.screen_idx
+		order by sr.docid
+	</select>
 	
 </mapper>
-
-

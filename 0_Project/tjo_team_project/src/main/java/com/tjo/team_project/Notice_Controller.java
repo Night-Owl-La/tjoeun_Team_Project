@@ -61,7 +61,6 @@ public class Notice_Controller {
 		selectOptionMap.put("end", end);
 		
 		int noticeRowTotal = noticeDao.notice_selectRowTotal(selectOptionMap);
-		System.out.println(noticeRowTotal);
 		String pageMenu = Paging.getPaging(url.toString(), nowPage, noticeRowTotal, PagingConstant.Board.BLOCKLIST, PagingConstant.Board.BLOCKPAGE);
 		
 		model.addAttribute("pageMenu", pageMenu);

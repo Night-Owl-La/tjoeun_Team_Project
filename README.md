@@ -11,6 +11,15 @@
 1. **_Document** : 개발 문서 폴더.
 2. **_API_Template** : 사용할 라이브러리 참고자료 폴더.
 
+![](MAIN_IMAGE.png)
+## 사용 방법
+>스크린 샷과 코드 예제를 통해 사용 방법을 자세히 설명.
+
+## 디렉토리 구조
+0. **_Project** : 프로젝트 소스코드.
+1. **_Document** : 개발 문서 폴더.
+2. **_API_Template** : 사용할 라이브러리 참고자료 폴더.
+
 ## 개발 정보
 개발 환경 ||
 -|-
@@ -31,4 +40,4 @@
 **Web Design** | Brackets 1.14.1
 **VCS** | Git/Github
 **VCS-GUI** | Github Desktop
-**OS** | Windows10, Ubuntu Desktop 19.10
+**OS** | Windows10, CentOS-8.1.1911-x86_64
