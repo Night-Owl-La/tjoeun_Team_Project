@@ -9,11 +9,11 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -25,9 +25,30 @@ import vo.API_MovieDataVo;
 public class API_MovieData_DB {
 
 	static final String url = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json.jsp";
+	
+	public static List<API_MovieDataVo> searchMovieList(String search_Key, String search_Value) throws Exception {
+		return searchExcution(search_Key, search_Value);
+	}
 
-	public static List<API_MovieDataVo> searchMovieList(String search_Key, String search_Value) throws IOException {
-
+	public static API_MovieDataVo selectMovieOne(String docid) throws Exception {
+		// 영화 상세정보 한 개만 얻기
+		API_MovieDataVo movie = searchExcution(docid).get(0);
+		return movie;
+	}
+	
+	public static List<API_MovieDataVo> searchLatestMovieList() throws Exception {
+		int year = Calendar.getInstance().get(Calendar.YEAR);
+		
+		String search_Key="releaseDts";
+		String search_Value=Integer.toString(year - 1);
+		
+		return searchExcution(search_Key, search_Value);
+	}
+	
+	// ###### Sub Method ######
+	
+	// Overloading
+	public static List<API_MovieDataVo> searchExcution(String search_Key, String search_Value) throws Exception{
 		// 0. URL 빌드.
 		StringBuilder urlBuilder = initRequestUrl();
 		urlBuilder = setRequestUrl(search_Key, search_Value, urlBuilder);
@@ -47,9 +68,9 @@ public class API_MovieData_DB {
 		// 4. 결과 리스트 반환.
 		return movieList;
 	}
-
-	public static API_MovieDataVo selectMovieOne(String docid) throws IOException {
-		
+	
+	// Overloading
+	public static List<API_MovieDataVo> searchExcution(String docid) throws Exception{
 		// DOCID에서 {ID, SEQ} 분리
 		String movieId = docid.replaceAll("[0-9]", "").toString();
 		String movieSeq = docid.replaceAll("[^0-9]", "").toString();
@@ -70,12 +91,11 @@ public class API_MovieData_DB {
 
 		// 3. GSON 파싱후 결과 리스트 받아오기.
 		List<API_MovieDataVo> movieList = gsonParssing(jsonData);
-		
-		// 영화 상세정보 한 개만 얻기
-		API_MovieDataVo movie = movieList.get(0);
-		
-		return movie;
+
+		// 4. 결과 리스트 반환.
+		return movieList;
 	}
+	
 	
 	private static StringBuilder initRequestUrl() throws UnsupportedEncodingException {
 
