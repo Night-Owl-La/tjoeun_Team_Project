@@ -18,4 +18,5 @@ public interface ScreenDao {
 	int insert_Schedule(Screen_ScheduleVo scheduleVo);
 	
 	List<Screen_FullDataVo> selectList_FullData();
+	List<Screen_FullDataVo> selectOne_FullData(String DOCID);
 }
