@@ -10,6 +10,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<hr />
 영화 고유등록 번호 : ${ API_Vo.DOCID }
 <hr />
 영화 제목 : ${ API_Vo.title }
