@@ -102,3 +102,28 @@ from
         GROUP BY screen.screen_idx) ss 
     on ss.screen_idx = s.screen_idx
 order by sr.docid;
+
+
+-- 상영 등록된 모든 영화중 해당하는 DOCID 정보만 가져오기.
+select 
+    sr.docid 영화_국제등록코드,
+    sr.screen_regdata_movietitle 영화이름, 
+    t.theater_name 영화관_이름,
+    t.theater_tel 영화관_연락처,
+    t.theater_area 영화관_지역,
+    t.theater_location 영화관_위치,
+    s.screen_id 상영관_번호,
+    s.screen_classification 상영관_구분,
+    ss.screen_seat_total_amount 상영관_좌석_총개수,
+    sc.screen_schedule_date 상영날짜,
+    sc.screen_schedule_time 상영시간
+from 
+    screen s inner join theater t on s.theater_idx = t.theater_idx
+    inner join screen_regdata sr on sr.screen_idx = s.screen_idx
+    inner join screen_schedule sc on sr.screen_regdata_idx = sc.screen_regdata_idx
+    inner join 
+        (select screen.screen_idx, count(*) screen_seat_total_amount 
+        from screen_seat inner join screen on screen_seat.screen_idx = screen.screen_idx
+        GROUP BY screen.screen_idx) ss 
+    on ss.screen_idx = s.screen_idx
+where sr.docid = 'F48331';
