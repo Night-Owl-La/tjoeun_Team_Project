@@ -14,7 +14,7 @@ import vo.API_MovieDataVo;
 public class MainController {
 	
 	@RequestMapping("/main/main.do")
-	public String main(Model model) throws IOException {
+	public String main(Model model) throws Exception {
 	
 	//�ܿ�ձ�2
 	API_MovieDataVo vo = API_MovieData_DB.selectMovieOne("F48331");

@@ -20,7 +20,7 @@ public class JSON_API_MovieData_Controller {
 	
 	@RequestMapping(value = "/api/movie/{docid}", method = RequestMethod.GET)
 	@ResponseBody
-	public Map selectMovieOne(@PathVariable("docid") String docid) throws IOException {
+	public Map selectMovieOne(@PathVariable("docid") String docid) throws Exception {
 		API_MovieDataVo vo = API_MovieData_DB.selectMovieOne(docid);
 		Map map = new HashMap();
 		

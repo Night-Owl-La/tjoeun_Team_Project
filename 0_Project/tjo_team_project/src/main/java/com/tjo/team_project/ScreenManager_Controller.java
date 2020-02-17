@@ -32,7 +32,7 @@ public class ScreenManager_Controller {
 	public String searchMovie_Form() { return "screenManager/search_movie_form"; }
 	
 	@RequestMapping("/screenManager/search_list.do")
-	public String searchMovie_List(String search_Key, String search_Value, Model model) throws IOException {
+	public String searchMovie_List(String search_Key, String search_Value, Model model) throws Exception {
 		List<API_MovieDataVo> searchMovie_List = API_MovieData_DB.searchMovieList(search_Key, search_Value);
 		
 		model.addAttribute("searchMovie_List", searchMovie_List);
@@ -42,7 +42,7 @@ public class ScreenManager_Controller {
 	// #### 영화 등록 ####
 	
 	@RequestMapping("/screenManager/insert_form.do")
-	public String movieInsert_Form(String DOCID, Model model) throws IOException {
+	public String movieInsert_Form(String DOCID, Model model) throws Exception {
 		API_MovieDataVo API_Vo = API_MovieData_DB.selectMovieOne(DOCID);
 		model.addAttribute("API_Vo", API_Vo);
 		return "screenManager/screen_insert_form"; 

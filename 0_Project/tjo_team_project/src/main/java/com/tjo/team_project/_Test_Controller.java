@@ -42,7 +42,7 @@ public class _Test_Controller {
 	}
 	
 	@RequestMapping("test.do")
-	public String test(Model model) throws IOException {
+	public String test(Model model) throws Exception {
 		
 		String search_Key = request.getParameter("search_Key");
 		String search_Value = request.getParameter("search_Value");
@@ -54,7 +54,7 @@ public class _Test_Controller {
 	}
 	
 	@RequestMapping("test_one.do")
-	public String test_one(String docid, Model model) throws IOException {
+	public String test_one(String docid, Model model) throws Exception {
 		//docid = "F48331";
 		
 		//List<API_MovieDataVo> list = API_MovieData_DB.selectMovieOne(docid);
