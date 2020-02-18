@@ -1,4 +1,4 @@
--- 영화관 일련번호 1에 대한 상영 정보 Query.
+﻿-- 영화관 일련번호 1에 대한 상영 정보 Query.
 select 
  screen_regdata.screen_regdata_movietitle 영화명, 
  theater.theater_name 영화관이름,
@@ -103,7 +103,6 @@ from
     on ss.screen_idx = s.screen_idx
 order by sr.docid;
 
-
 -- 상영 등록된 모든 영화중 해당하는 DOCID 정보만 가져오기.
 select 
     sr.docid 영화_국제등록코드,
@@ -127,3 +126,28 @@ from
         GROUP BY screen.screen_idx) ss 
     on ss.screen_idx = s.screen_idx
 where sr.docid = 'F48331';
+
+-- 상영 등록된 모든 영화중 해당하는 DOCID, 상영일자의 상세 정보만 가져오기.
+
+select 
+    docid,
+    screen_regdata_movietitle, 
+    theater_name,
+    theater_tel,
+    theater_area,
+    theater_location,
+    screen_id,
+    screen_classification,
+    screen_seat_total_amount,
+    screen_schedule_date,
+    screen_schedule_time
+from 
+    screen s inner join theater t on s.theater_idx = t.theater_idx
+    inner join screen_regdata sr on sr.screen_idx = s.screen_idx
+    inner join screen_schedule sc on sr.screen_regdata_idx = sc.screen_regdata_idx
+    inner join 
+        (select screen.screen_idx, count(*) screen_seat_total_amount 
+        from screen_seat inner join screen on screen_seat.screen_idx = screen.screen_idx
+        GROUP BY screen.screen_idx) ss 
+    on ss.screen_idx = s.screen_idx
+where sr.docid = 'F32196' and screen_schedule_date = '2020-02-18'

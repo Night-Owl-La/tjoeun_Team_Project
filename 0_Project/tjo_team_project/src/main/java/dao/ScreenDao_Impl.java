@@ -57,4 +57,9 @@ public class ScreenDao_Impl implements ScreenDao {
 		return sqlSession.selectList("screen.one_Screen_FullData", DOCID);
 	}
 
+	@Override
+	public List<Screen_FullDataVo> selectList_FullData(Screen_FullDataVo vo) {
+		return sqlSession.selectList("screen.list_Screen_FullData_DOCID_AND_DATE", vo);
+	}
+
 }

@@ -19,4 +19,5 @@ public interface ScreenDao {
 	
 	List<Screen_FullDataVo> selectList_FullData();
 	List<Screen_FullDataVo> selectOne_FullData(String DOCID);
+	List<Screen_FullDataVo> selectList_FullData(Screen_FullDataVo vo);
 }

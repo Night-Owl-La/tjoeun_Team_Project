@@ -1,4 +1,4 @@
-package com.tjo.team_project;
+﻿package com.tjo.team_project;
 
 import java.io.IOException;
 import java.util.List;
@@ -64,9 +64,16 @@ public class ScreenManager_Controller {
 	// #### 등록된 영화 상영정보 ####
 	
 	@RequestMapping("/screenManager/screenRegdata_list.do")
-	public String regScreenList(Model model) {
-		List<Screen_FullDataVo> screen_FullData_List = screenDao.selectList_FullData();
-		model.addAttribute("screen_FullData_List", screen_FullData_List);
+	public String regScreenList(Model model, Screen_FullDataVo vo) {
+		if(vo==null) {
+			List<Screen_FullDataVo> screen_FullData_List = screenDao.selectList_FullData();
+			model.addAttribute("screen_FullData_List", screen_FullData_List);
+		}else {
+			List<Screen_FullDataVo> screen_FullData_List = screenDao.selectList_FullData(vo);
+			model.addAttribute("screen_FullData_List", screen_FullData_List);
+		}
+		
+		
 		return "screenManager/screen_regdata_list";
 	}
 
