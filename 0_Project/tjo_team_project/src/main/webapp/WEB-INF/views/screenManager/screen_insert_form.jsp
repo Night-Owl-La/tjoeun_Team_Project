@@ -111,7 +111,7 @@
 		
 		var today = new Date();
 		var nowYear = today.getFullYear();
-		var nowMonth = today.getMonth();
+		var nowMonth = today.getMonth()+1;
 		var nowDate = parseInt(today.getDate());
 		
 		if(nowMonth<10) nowMonth = '0'+nowMonth;
