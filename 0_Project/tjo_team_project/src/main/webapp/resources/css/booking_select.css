@@ -1,0 +1,329 @@
+@charset "UTF-8";
+/* CSS RESET */
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+	color: #fff;
+	font-family: consolas;
+}
+
+ul, li {
+	list-style: none;
+	padding: 0;
+}
+
+/* NAVIGATION BAR */
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+#logo {
+	width: 40px;
+}
+
+.nav {
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+.nav-link {
+	color: #fff;
+}
+
+.nav-link:hover {
+	color: #A2FF95;
+}
+
+
+/* BODY */
+.select_location {
+	margin: 0 0 30px 0;
+}
+
+/* 시간 선택 */
+.time_wrap {
+	display: inline-block;
+}
+
+.time_btn_wrap {
+	margin: 20px;
+	float: left;
+	text-align: center;
+}
+
+.time_btn_wrap>span:nth-child(1) {
+	color: #A2FF95;
+}
+
+#time_btn {
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #fff;
+	text-align: center;
+	color: #000;
+	cursor: pointer;
+}
+
+#time_box>li.on {
+	color: #000;
+	background-color: #A2FF95;
+}
+
+.select_location>h3 {
+	color: #A2FF95;
+}
+
+.tab-content {
+	height: 600px;
+}
+
+
+#menu3 {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.menu_notice {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.menu_notice>span {
+	font-size: 24px;
+}
+
+/* 인원수 선택 리스트 */
+.form-group {
+	width: 30%;
+	text-align: center;
+	margin: 20px auto;
+}
+
+.form-group>label {
+	font-family: consolas;
+}
+
+.form-control {
+	cursor: pointer;
+}
+
+
+/* SUBMIT BUTTON */
+.plan {
+	top: 50%;
+	right: 50%;
+	padding: 50px 20px 50px 20px;
+	z-index: 1000;
+}
+
+.modal_title {
+	width: 100%;
+	text-align: center;
+	font-size: 1.5rem;
+	padding: 20px;
+}
+
+.close {
+	color: #fff;
+	opacity: 1;
+	font-size: 2.5rem;
+}
+
+#btn_wrap {
+	margin-top: 50px;
+	width: 100%;
+	text-align: center;
+}
+
+.submit_btn {
+	width: 100%;
+	text-align: center;
+}
+
+#a_btn {
+	display: inline-block;
+	padding: 10px 20px;
+	margin: 0 auto;
+	color: #A2FF95;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	text-decoration: none;
+	font-size: 24px;
+	overflow: hidden;
+	transition: 0.2s;
+}
+
+#a_btn:hover {
+	color: #3D3D3D;
+	background: #A2FF95;
+	box-shadow: 0 0 10px #A2FF95, 0 0 40px #A2FF95, 0 0 80px #A2FF95;
+	transition-delay: 0.5s;
+}
+
+/* MODAL */
+.modal {
+	top: 10%;
+}
+.modal-content {
+	background-color: #343a40;
+}
+
+.modal-footer {
+	display: inline-block;
+}
+
+.action {
+	padding: 50px;
+  	text-align: center;
+  	font-size: 2em;
+  	font-weight: 700;
+}
+
+/* CHOOSE SEATS POPUP */
+.rows-mini {
+  width: 290px;
+  margin: 0 auto;
+}
+
+.row {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  margin-left: 0;
+}
+
+.row_seat {
+  height: 100%;
+  margin: 0;
+}
+
+.rows-mini .row_seat {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: rgba(72, 72, 78, 0.5);
+  margin: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #A2FF95;
+  text-align: center;
+  font-family: consolas;
+  font-size: 1rem;
+}
+
+.rows-mini .row_seat:hover {
+  color: #fff;
+}
+
+.row_seat-reserved:hover {
+  background: #de6363;
+}
+
+
+
+/* 좌석선택시 색상변경 */
+#seat_box>li {
+	width: 50px;
+  	height: 50px;
+	line-height: 50px;
+	background: rgba(72, 72, 78, 0.5);
+	margin: 4px;
+	border-radius: 4px;
+	cursor: pointer;
+	color: #A2FF95;
+	text-align: center;
+	font-family: consolas;
+}
+
+#seat_box>li.on {
+	width: 50px;
+  	height: 50px;
+	line-height: 50px;
+  	background: #A2FF95;
+  	margin: 4px;
+  	border-radius: 4px;
+  	cursor: pointer;
+  	color: #fff;
+  	text-align: center;
+}
+
+.legend {
+  list-style: none;
+  margin: 1em 0 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.legend_item {
+  font-size: 0.85em;
+  font-weight: bold;
+  margin: 0;
+  padding: 10px;
+  display: inline-block;
+}
+
+.legend_item::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin: 0 5px 0 0;
+  border-radius: 2px;
+  background: rgba(72, 72, 78, 0.5);
+}
+
+.legend_item-reserved::before {
+  background: #de6363;
+}
+
+.legend_item-selected::before,
+.rows-mini .row_seat-selected,
+.rows-mini .row_seat-selected:hover {
+  background: #A2FF95;
+  /* background: #21c252; */
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+}
+
+.tooltip::before,
+.tooltip::after {
+  position: absolute;
+  pointer-events: none;
+  left: 50%;
+}
+
+/* 티켓 구매 버튼 */
+.action-buy {
+	padding: 0 20px;
+  	background: none;
+ 	color: #fff;
+}
+
+/* FOOTER */
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+	background-color: #343a40;
+}
+
+.ft_cnt {
+	color: #A2FF95;
+}
