@@ -65,14 +65,8 @@ public class ScreenManager_Controller {
 	
 	@RequestMapping("/screenManager/screenRegdata_list.do")
 	public String regScreenList(Model model, Screen_FullDataVo vo) {
-		if(vo==null) {
-			List<Screen_FullDataVo> screen_FullData_List = screenDao.selectList_FullData();
-			model.addAttribute("screen_FullData_List", screen_FullData_List);
-		}else {
-			List<Screen_FullDataVo> screen_FullData_List = screenDao.selectList_FullData(vo);
-			model.addAttribute("screen_FullData_List", screen_FullData_List);
-		}
-		
+		List<Screen_FullDataVo> screen_FullData_List = screenDao.selectList_FullData();
+		model.addAttribute("screen_FullData_List", screen_FullData_List);
 		
 		return "screenManager/screen_regdata_list";
 	}
