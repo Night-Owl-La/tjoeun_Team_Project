@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+
+div{
+  
+}
+
+
+form{
+	display: flex;
+	justify-content: center;
+	
+}
+
+
+body{
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+
+table{
+	border-right:none;
+	border-left:none;
+	border-top:none;
+	border-bottom:none;
+	width: 20%;
+	min-width: 100px;
+
+}
+
+div_or{
+	border: 0;
+}
+
+div_ld, div_pwd{
+	width:95%;
+}
+
+
+input:hover{
+	border: 1px solid black;
+
+}
+
+button:hover {
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+
+
