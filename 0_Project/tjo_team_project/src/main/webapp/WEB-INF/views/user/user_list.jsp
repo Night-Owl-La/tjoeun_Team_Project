@@ -49,8 +49,19 @@
 <body>
 	<div id="main_box" >
 		<h2>;;;회원목록;;;</h2>
-		<div style="text-align: right">
-			<input type="button" value="회원가입" onclick="location.href='insert_form.do'">		
+		<div style="text-align: right">				
+		<!-- 로그인된 상태  -->
+		<c:if test="${ not empty user}">
+			${ user.user_name }님 환영합니다.
+			<input type="button" value="로그아웃" onclick="location.href='logout.do?url=' + location.href;">
+		</c:if>
+		
+		<!-- 로그인 안된 상태 -->
+		<c:if test="${ empty user}">
+			<input type="button" value="로그인" onclick="location.href='login_form.do'">	
+		</c:if>
+		
+			<input type="button" value="회원가입" onclick="location.href='insert_form.do'">	
 		</div>
 		
 		<table border="1">
