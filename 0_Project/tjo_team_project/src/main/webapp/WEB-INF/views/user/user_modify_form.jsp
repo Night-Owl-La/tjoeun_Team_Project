@@ -137,19 +137,19 @@
 			<!-- 6번째줄 -->
 			<tr>
 				<th>닉네임</th>
-				<td><input name='user_nickname' ></td>
+				<td><input name="user_nickname" value="${vo.user_nickname}" ></td>
 			</tr>
 			
 			<!-- 7번째줄 -->			
 			<tr>
 				<th>전화번호</th>
-				<td><input name='user_tel' ></td>
+				<td><input name="user_tel" value="${vo.user_tel}"></td>
 			</tr>
 			
 			<!-- 8번째줄 -->
 			<tr>
 				<th>이메일</th>
-				<td><input name='user_email' ></td>
+				<td><input name="user_email" value="${vo.user_email}"></td>
 			</tr>
 			
 			<!-- 9번째줄 -->

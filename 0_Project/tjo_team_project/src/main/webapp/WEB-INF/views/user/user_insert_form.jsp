@@ -122,7 +122,7 @@
 <body>
 	<form>
 		<table border="1" align="center" width="500">
-			<caption>;;;회원가입;;;</caption>
+			<caption>회원가입</caption>
 			<!-- 1번째줄 -->
 			<tr>
 				<th>이름</th>
@@ -144,7 +144,13 @@
 				<td><input type="password" name="user_pwd"></td>
 			</tr>
 			
-			<!-- 4번째줄 -->
+			<!-- 5번째줄 -->
+			<tr>
+				<th>생년월일</th>
+				<td><input type="date" name="user_birth"></td>
+			</tr>
+			
+			<!-- 6번째줄 -->
 			<tr>
 				<th>우편번호</th>
 				<td>
@@ -153,32 +159,32 @@
 				</td>
 			</tr>
 			
-			<!-- 5번째줄 -->
+			<!-- 7번째줄 -->
 			<tr>
 				<th>주소</th>
 				<td><input style="width: 90%" name="user_addr" id="addr" ></td>
 			</tr>
 			
-			<!-- 6번째줄 -->
-			<tr>
-				<th>닉네임</th>
-				<td><input name='user_nickname' ></td>
-			</tr>
-			
-			<!-- 7번째줄 -->
-			<tr>
-				<th>전화번호</th>
-				<td><input name='user_tel' ></td>
-			</tr>
-			
 			<!-- 8번째줄 -->
 			<tr>
+				<th>닉네임</th>
+				<td><input name="user_nickname" value="${vo.user_nickname}" ></td>
+			</tr>
+			
+			<!-- 9번째줄 -->			
+			<tr>
+				<th>전화번호</th>
+				<td><input name="user_tel" value="${vo.user_tel}"></td>
+			</tr>
+			
+			<!-- 10번째줄 -->
+			<tr>
 				<th>이메일</th>
-				<td><input name='user_email' ></td>
+				<td><input name="user_email" value="${vo.user_email}"></td>
 			</tr>
 			
 						
-			<!-- 9번째줄 -->
+			<!-- 11번째줄 -->
 			<tr>
 				<th>회원구분</th>
 				<td>
@@ -188,7 +194,7 @@
 			</tr>
 			
 		
-			<!-- 10번째줄 -->
+			<!-- 12번째줄 -->
 			<tr>
 				<td colspan="2" align="center">
 					<input id="btn_reg" type="button" value="가입하기" onclick="send(this.form);" disabled="disabled">
