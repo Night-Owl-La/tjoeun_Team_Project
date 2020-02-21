@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kakao">
+
+
+	<select id="kakao_one_idx" parameterType="int" resultType="vo.KakaoUserVo">
+	
+		select * from kakao_user_info where kakao_user_idx=#{kakao_user_idx}
+	
+	</select>
+
+	<select id="kakao_one_email" parameterType="String" resultType="vo.KakaoUserVo">
+	
+		select * from kakao_user_info where kakao_user_email=#{kakao_user_email}
+	
+	</select>
+	
+	<insert id="insert_kakaoAccount" parameterType="vo.KakaoUserVo">
+		insert into kakao_user_info values(seq_kakao_user_idx.nextVal, 
+												#{kakao_user_email})
+	</insert>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
