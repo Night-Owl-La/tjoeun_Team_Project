@@ -30,5 +30,5 @@
 **Data Modeling** | Star UML 3.2.2
 **Web Design** | Brackets 1.14.1
 **VCS** | Git/Github
-**VCS-GUI** | Github Desktop
-**OS** | Windows10, CentOS-8.1.1911-x86_64
+**VCS-GUI** | Github Desktop, SmartGit
+**OS** | Windows10, CentOS-8.1
