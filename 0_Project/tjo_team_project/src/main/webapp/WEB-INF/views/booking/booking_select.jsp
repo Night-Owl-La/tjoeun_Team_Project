@@ -9,26 +9,6 @@
 <title>booking_select</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/booking_select.css" />
-<script type="text/javascript">
-
-
-	/* 날짜 선택 */
-	$(function() {
-		$('#time_box li').click(function() {
-			$('#time_box li').toggleClass('on');
-		})
-	});
-	
-	/* 좌석 선택 */
-	$(function() {
-		$('#seat_box li').click(function() {
-			$('#seat_box li').removeClass();
-			$(this).addClass('on');
-			
-		})
-	});
-
-</script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -58,7 +38,6 @@
 		</div>
 	</nav>
 	<div class="container mt-3">
-	<form method="GET">
 		<h2>Toggleable Tabs</h2>
 		<br>
 		<!-- Nav tabs -->
@@ -69,27 +48,7 @@
 			<!-- 5개의 날짜에 대한 예매 진행 -->
 			<div id="home" class="container tab-pane active"></div>
 			
-			<c:if test="${empty list}">
-				<div id="menu3" class="container tab-pane fade">
-					<div class="menu_notice">
-						<span>No Films Available</span>
-					</div>
-				</div>
-			</c:if>
 		</div>
-		
-		<!-- 인원수 선택 START -->
-		<div class="form-group">
-			<label for="sel1">Qty</label>
-     		<select class="form-control" id="sel1" name="sellist1">
-		        <option>1</option>
-		        <option>2</option>
-		        <option>3</option>
-		        <option>4</option>
-			</select>
-			<!-- <button type="submit" id="btn_sub" class="btn btn-primary">Submit</button> -->
-		</div>
-		<!-- 인원수 선택 END -->
 		
 		<!-- 좌석선택 MODAL창 버튼 -->
 		<div id="btn_wrap">
@@ -184,4 +143,24 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/booking_select.js"></script>
+<script type="text/javascript">
+
+
+	/* 날짜 선택 */
+	$(function() {
+		$('#time_box li').click(function() {
+			$('#time_box li').toggleClass('on');
+		})
+	});
+	
+	/* 좌석 선택 */
+	$(function() {
+		$('#seat_box li').click(function() {
+			$('#seat_box li').removeClass();
+			$(this).addClass('on');
+			
+		})
+	});
+
+</script>
 </html>
